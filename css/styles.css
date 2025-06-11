@@ -1,4 +1,4 @@
-/* 
+/*
 LibreTV 全局样式
 包含多个页面共享的基础样式
 对于特定页面的样式，请参考:
@@ -36,28 +36,65 @@ LibreTV 全局样式
     stroke: currentColor;
 }
 
+/*:root {*/
+/*    !* 赛博影视主题配色方案 - 柔和版 *!*/
+/*    --primary-color: #00ccff;       !* 霓虹蓝主色调 *!*/
+/*    --primary-light: #33d6ff;       !* 浅霓虹蓝变体 *!*/
+/*    --secondary-color: #0f1622;     !* 深蓝黑背景色 *!*/
+/*    --accent-color: #ff3c78;        !* 霓虹粉强调色 *!*/
+/*    --text-color: #e6f2ff;          !* 柔和的蓝白色文本 *!*/
+/*    --text-muted: #8599b2;          !* 淡蓝灰色次级文本 *!*/
+/*    --border-color: rgba(0, 204, 255, 0.15);*/
+/*    --page-gradient-start: #0f1622; !* 深蓝黑起始色 *!*/
+/*    --page-gradient-end: #192231;   !* 深靛蓝结束色 *!*/
+/*    --card-gradient-start: #121b29; !* 卡片起始色 *!*/
+/*    --card-gradient-end: #1c2939;   !* 卡片结束色 *!*/
+/*    --card-accent: rgba(0, 204, 255, 0.12); !* 霓虹蓝卡片强调色 *!*/
+/*    --card-hover-border: rgba(0, 204, 255, 0.5); !* 悬停边框颜色 *!*/
+/*}*/
+
+
 :root {
-    /* 赛博影视主题配色方案 - 柔和版 */
-    --primary-color: #00ccff;       /* 霓虹蓝主色调 */
-    --primary-light: #33d6ff;       /* 浅霓虹蓝变体 */
-    --secondary-color: #0f1622;     /* 深蓝黑背景色 */
-    --accent-color: #ff3c78;        /* 霓虹粉强调色 */
-    --text-color: #e6f2ff;          /* 柔和的蓝白色文本 */
-    --text-muted: #8599b2;          /* 淡蓝灰色次级文本 */
-    --border-color: rgba(0, 204, 255, 0.15);
-    --page-gradient-start: #0f1622; /* 深蓝黑起始色 */
-    --page-gradient-end: #192231;   /* 深靛蓝结束色 */
-    --card-gradient-start: #121b29; /* 卡片起始色 */
-    --card-gradient-end: #1c2939;   /* 卡片结束色 */
-    --card-accent: rgba(0, 204, 255, 0.12); /* 霓虹蓝卡片强调色 */
-    --card-hover-border: rgba(0, 204, 255, 0.5); /* 悬停边框颜色 */
+    /* 秋日暖色配色方案 */
+    --primary-color: #d9822b;       /* 秋叶橙主色调 */
+    --primary-light: #f3a75c;       /* 浅橙色变体 */
+    --secondary-color: #faf6f1;     /* 米白背景色 */
+    --accent-color: #9b3e2c;        /* 红棕强调色 */
+    --text-color: #2e2a26;          /* 深棕黑文本 */
+    --text-muted: #7a6a5d;          /* 棕灰次级文本 */
+    --border-color: rgba(217, 130, 43, 0.2);
+    --page-gradient-start: #fff9f2; /* 浅米色渐变起点 */
+    --page-gradient-end: #fdf6ed;   /* 浅暖米色渐变终点 */
+    --card-gradient-start: #ffffff; /* 卡片起始色 */
+    --card-gradient-end: #f8f3ec;   /* 卡片结束色 */
+    --card-accent: rgba(217, 130, 43, 0.12); /* 秋橙卡片强调色 */
+    --card-hover-border: rgba(217, 130, 43, 0.4); /* 悬停边框 */
 }
+
+
+/*:root {*/
+/*    !* 蓝绿清新配色方案 *!*/
+/*    --primary-color: #3bb9a8;       !* 湖水绿主色调 *!*/
+/*    --primary-light: #5fd4c3;       !* 浅湖水绿变体 *!*/
+/*    --secondary-color: #f0f7f6;     !* 浅灰白背景色 *!*/
+/*    --accent-color: #2c7be5;        !* 蓝色强调色 *!*/
+/*    --text-color: #1a2b2b;          !* 深灰蓝文本 *!*/
+/*    --text-muted: #6b8c89;          !* 暗青灰次级文本 *!*/
+/*    --border-color: rgba(59, 185, 168, 0.2);*/
+/*    --page-gradient-start: #eaf9f6; !* 淡青绿色渐变起点 *!*/
+/*    --page-gradient-end: #f7fcfb;   !* 极浅白绿渐变终点 *!*/
+/*    --card-gradient-start: #ffffff; !* 卡片起始色 *!*/
+/*    --card-gradient-end: #f4f9f8;   !* 卡片结束色 *!*/
+/*    --card-accent: rgba(59, 185, 168, 0.12); !* 湖水绿卡片强调色 *!*/
+/*    --card-hover-border: rgba(59, 185, 168, 0.4); !* 悬停边框 *!*/
+/*}*/
+
 
 .page-bg {
     background: linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end));
     min-height: 100vh;
     /* 柔和赛博点状背景 */
-    background-image: 
+    background-image:
         linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end)),
         radial-gradient(circle at 25px 25px, rgba(0, 204, 255, 0.04) 2px, transparent 3px),
         radial-gradient(circle at 75px 75px, rgba(255, 60, 120, 0.02) 1px, transparent 2px),
@@ -207,13 +244,25 @@ button, .card-hover {
     border-color: var(--primary-color);
 }
 
+/*.footer {*/
+/*    width: 100%;*/
+/*    transition: all 0.3s ease;*/
+/*    margin-top: auto;*/
+/*    background: linear-gradient(to bottom, transparent, var(--page-gradient-start));*/
+/*    border-top: 1px solid var(--border-color);*/
+/*}*/
+
+
 .footer {
     width: 100%;
     transition: all 0.3s ease;
     margin-top: auto;
-    background: linear-gradient(to bottom, transparent, var(--page-gradient-start));
-    border-top: 1px solid var(--border-color);
+    background: linear-gradient(to bottom, #fffaf0, #ffe5b4);
+    /*border-top: 1px solid #f5deb3;*/
+    border-top: none !important;
 }
+
+
 
 .footer a:hover {
     text-decoration: underline;
@@ -235,11 +284,11 @@ body {
         flex-direction: column;
         min-height: 100vh;
     }
-    
+
     .container {
         flex: 1;
     }
-    
+
     .footer {
         margin-top: auto;
     }
@@ -256,7 +305,7 @@ body {
     .card-hover h3 {
         min-height: 2.5rem;
     }
-    
+
     .card-hover .flex-grow {
         min-height: 80px;
     }
@@ -1017,11 +1066,11 @@ body {
         gap: 0.5rem;
         font-size: 0.8rem;
     }
-    
+
     #modal .detail-label {
         min-width: 2.5rem;
     }
-    
+
     #modal .detail-desc-content {
         max-height: 6rem;
         font-size: 0.8rem;
