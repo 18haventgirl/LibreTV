@@ -337,6 +337,7 @@ body {
 }
 
 #episodesGrid button {
+    color:black;
     background: rgba(0, 204, 255, 0.08);
     border: 1px solid rgba(0, 204, 255, 0.2);
     transition: all 0.2s ease;
@@ -951,6 +952,7 @@ body {
 /* 增加卡片内字体大小 */
 .card-hover h3 {
     font-size: 0.95rem; /* 增加标题字体大小 */
+    color:black;
     line-height: 1.3rem;
     margin-bottom: 0.5rem;
 }
