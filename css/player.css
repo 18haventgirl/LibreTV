@@ -7,6 +7,7 @@ body, html {
     color: white;
 }
 .player-container {
+    color:#f3a75c;
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
