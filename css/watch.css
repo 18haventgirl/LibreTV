@@ -34,14 +34,14 @@ body {
 .logo-icon {
     width: 40px;
     height: 40px;
-    color: #00ccff;
+    color: #eaa568;
     margin-right: 10px;
 }
 
 .logo-text {
     font-size: 2rem;
     margin: 0;
-    background: linear-gradient(to right, #00ccff, #ff3c78);
+    background: linear-gradient(to right, #f59b4d, #d5772e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
