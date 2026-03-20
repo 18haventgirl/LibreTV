@@ -538,10 +538,11 @@ function renderDoubanCards(data, container) {
             // 为不同设备优化卡片布局
             card.innerHTML = `
                 <div class="relative w-full aspect-[2/3] overflow-hidden cursor-pointer" onclick="fillAndSearchWithDouban('${safeTitle}')">
-                    <img src="${proxiedCoverUrl || originalCoverUrl}" alt="${safeTitle}" 
+                    <img src="${proxiedCoverUrl || originalCoverUrl}" alt="${safeTitle}"
+                        data-fallback="${originalCoverUrl}"
                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                        onerror="this.onerror=null; ${originalCoverUrl ? `this.src='${originalCoverUrl}';` : ''} this.classList.add('object-contain');"
-                        loading="lazy" referrerpolicy="no-referrer">
+                        onerror="this.onerror=null; if (this.dataset.fallback && this.src !== this.dataset.fallback) { this.src=this.dataset.fallback; return; } this.src='image/logo.svg'; this.classList.add('object-contain');"
+                        loading="lazy" referrerpolicy="origin">
                     <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                     <div class="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded-sm">
                         <span class="text-red-400">★</span> ${safeRate}
