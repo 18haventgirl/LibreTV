@@ -765,6 +765,8 @@ async function search() {
         
         // 如果没有结果
         if (!allResults || allResults.length === 0) {
+            const pagination = document.getElementById('resultsPagination');
+            if (pagination) pagination.innerHTML = '';
             resultsDiv.innerHTML = `
                 <div class="col-span-full text-center py-16">
                     <svg class="mx-auto h-12 w-12 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -873,9 +875,11 @@ async function search() {
                     </div>
                 </div>
             `;
-        }).join('');
+        });
         
-        resultsDiv.innerHTML = safeResults;
+        currentSearchResults = safeResults;
+        currentSearchPage = 1;
+        renderResultsPage(currentSearchPage);
     } catch (error) {
         console.error('搜索错误:', error);
         if (error.name === 'AbortError') {
@@ -1432,3 +1436,53 @@ function saveStringAsFile(content, fileName) {
 }
 
 // 移除Node.js的require语句，因为这是在浏览器环境中运行的
+
+function buildPagination(totalPages) {
+    const pagination = document.getElementById('resultsPagination');
+    if (!pagination) return;
+    pagination.innerHTML = '';
+    if (totalPages <= 1) return;
+
+    const createBtn = (label, page, disabled = false, active = false) => {
+        const btn = document.createElement('button');
+        btn.textContent = label;
+        if (active) btn.classList.add('active');
+        if (disabled) {
+            btn.disabled = true;
+            btn.style.opacity = '0.5';
+        } else {
+            btn.addEventListener('click', () => renderResultsPage(page));
+        }
+        pagination.appendChild(btn);
+    };
+
+    createBtn('???', Math.max(1, currentSearchPage - 1), currentSearchPage === 1);
+
+    const maxButtons = 7;
+    let start = Math.max(1, currentSearchPage - 3);
+    let end = Math.min(totalPages, start + maxButtons - 1);
+    if (end - start < maxButtons - 1) {
+        start = Math.max(1, end - maxButtons + 1);
+    }
+
+    for (let i = start; i <= end; i++) {
+        createBtn(String(i), i, false, i === currentSearchPage);
+    }
+
+    createBtn('???', Math.min(totalPages, currentSearchPage + 1), currentSearchPage === totalPages);
+}
+
+function renderResultsPage(page) {
+    const resultsDiv = document.getElementById('results');
+    if (!resultsDiv) return;
+
+    const totalPages = Math.max(1, Math.ceil(currentSearchResults.length / RESULTS_PER_PAGE));
+    currentSearchPage = Math.min(Math.max(1, page), totalPages);
+
+    const start = (currentSearchPage - 1) * RESULTS_PER_PAGE;
+    const end = start + RESULTS_PER_PAGE;
+    const pageItems = currentSearchResults.slice(start, end);
+    resultsDiv.innerHTML = pageItems.join('');
+
+    buildPagination(totalPages);
+}
