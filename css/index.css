@@ -349,10 +349,12 @@
 }
 
 .corner-left {
+    left: 1rem;
     left: calc(env(safe-area-inset-left, 0px) + 1rem);
 }
 
 .corner-right {
+    right: 1rem;
     right: calc(env(safe-area-inset-right, 0px) + 1rem);
 }
 
