@@ -524,8 +524,13 @@ function renderDoubanCards(data, container) {
                 .replace(/>/g, '&gt;');
             
             // 处理图片URL
-            // 1. 直接使用豆瓣图片URL (添加no-referrer属性)
-            const originalCoverUrl = item.cover;
+            // 1. 规范化为 https 绝对地址，避免 mixed content 和 // 形式导致代理失败
+            let originalCoverUrl = item.cover || '';
+            if (originalCoverUrl.startsWith('//')) {
+                originalCoverUrl = `https:${originalCoverUrl}`;
+            } else if (originalCoverUrl.startsWith('http://')) {
+                originalCoverUrl = `https://${originalCoverUrl.slice(7)}`;
+            }
             
             // 2. 也准备代理URL作为备选
             const proxiedCoverUrl = PROXY_URL + encodeURIComponent(originalCoverUrl);
