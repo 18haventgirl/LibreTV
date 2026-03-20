@@ -122,6 +122,7 @@ button, .card-hover {
     display: flex;
     flex-direction: column;
     height: 100%;
+    color: var(--text-color);
 }
 
 /* 确保卡片内容区域高度一致性 */
