@@ -116,6 +116,18 @@ function isValidUrl(urlString) {
   }
 }
 
+function getRefererForUrl(targetUrl) {
+  try {
+    const host = new URL(targetUrl).hostname;
+    if (host.endsWith('doubanio.com') || host.endsWith('douban.com')) {
+      return 'https://movie.douban.com/';
+    }
+  } catch {
+    // ignore
+  }
+  return '';
+}
+
 // 代理路由
 app.get('/proxy/:encodedUrl', async (req, res) => {
   try {
@@ -135,13 +147,15 @@ app.get('/proxy/:encodedUrl', async (req, res) => {
     
     const makeRequest = async () => {
       try {
+        const referer = getRefererForUrl(targetUrl);
         return await axios({
           method: 'get',
           url: targetUrl,
           responseType: 'stream',
           timeout: config.timeout,
           headers: {
-            'User-Agent': config.userAgent
+            'User-Agent': config.userAgent,
+            ...(referer ? { 'Referer': referer } : {})
           }
         });
       } catch (error) {

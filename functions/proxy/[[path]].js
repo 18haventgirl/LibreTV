@@ -123,6 +123,16 @@ export async function onRequest(context) {
         return USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)];
     }
 
+    function getRefererForUrl(targetUrl) {
+        try {
+            const host = new URL(targetUrl).hostname;
+            if (host.endsWith('doubanio.com') || host.endsWith('douban.com')) {
+                return 'https://movie.douban.com/';
+            }
+        } catch {}
+        return null;
+    }
+
     // 获取 URL 的基础路径 (用于解析相对路径)
     function getBaseUrl(urlStr) {
         try {
@@ -180,7 +190,7 @@ export async function onRequest(context) {
             // 尝试传递一些原始请求的头信息
             'Accept-Language': request.headers.get('Accept-Language') || 'zh-CN,zh;q=0.9,en;q=0.8',
             // 尝试设置 Referer 为目标网站的域名，或者传递原始 Referer
-            'Referer': request.headers.get('Referer') || new URL(targetUrl).origin
+            'Referer': (getRefererForUrl(targetUrl) || request.headers.get('Referer') || new URL(targetUrl).origin)
         });
 
         try {
