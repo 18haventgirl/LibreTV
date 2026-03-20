@@ -1,0 +1,28 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <!-- Icon 5 refined: circle badge, non-overlapping digits, all inside circle -->
+  <circle cx="512" cy="512" r="460" stroke="#111" stroke-width="40" fill="none" />
+  <g stroke="#111" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- 1 -->
+    <path d="M165 300 V740" />
+
+    <!-- 2 -->
+    <path d="M250 360 Q310 300 370 360 Q390 375 370 390 L270 520 Q250 540 270 560 H390" />
+
+    <!-- 5 -->
+    <path d="M450 300 H590 M450 300 V460 H560 Q640 460 640 560 Q640 740 520 740 H450" />
+
+    <!-- 8 (single continuous stroke, moved up slightly) -->
+    <path d="M700 420
+             C700 355 750 315 800 315
+             C850 315 900 355 900 420
+             C900 485 850 525 800 525
+             C750 525 700 485 700 420
+             C700 355 750 315 800 315
+             M700 420
+             C700 485 750 525 800 525
+             C850 525 900 565 900 630
+             C900 695 850 735 800 735
+             C750 735 700 695 700 630
+             C700 565 750 525 800 525" />
+  </g>
+</svg>

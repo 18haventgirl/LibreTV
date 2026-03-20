@@ -9,8 +9,8 @@
     <meta name="author" content="1258Movie Team">
 
     <!-- Favicon -->
-    <link rel="icon" href="image/logo.png">
-    <link rel="apple-touch-icon" href="image/logo-black.png">
+    <link rel="icon" href="image/logo.svg">
+    <link rel="apple-touch-icon" href="image/logo.svg">
     <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
 </head>
 <body class="page-bg text-white">
     <!-- 将历史记录按钮移到左上角，并缩小尺寸 -->
-    <div class="fixed z-10 corner-container corner-left">
+    <div class="corner-container corner-left">
         <button onclick="toggleHistory(event)" class="top-corner-button" aria-label="观看历史">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -31,7 +31,7 @@
     </div>
 
     <!-- 设置按钮保留在右上角，并缩小尺寸 -->
-    <div class="fixed z-10 corner-container corner-right">
+    <div class="corner-container corner-right">
         <button onclick="toggleSettings(event)" class="top-corner-button" aria-label="打开设置">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
@@ -294,10 +294,11 @@
                     </div>
                     <!-- 修改网格布局以适应大一些的横向卡片 -->
                     <div class="netflix-row-wrap">
-                        <div id="results" class="netflix-row">
+                        <div id="results" class="results-grid">
                         <!-- 结果将在这里动态生成 -->
+                        </div>
                     </div>
-                </div>
+                    <div id="resultsPagination" class="mt-4 flex flex-wrap justify-center gap-2"></div>
             </div>
         </div>
     </div>

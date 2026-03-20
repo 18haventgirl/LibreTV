@@ -11,6 +11,11 @@ let currentVideoTitle = '';
 // 全局变量用于倒序状态
 let episodesReversed = false;
 
+// 搜索结果分页
+let currentSearchResults = [];
+let currentSearchPage = 1;
+const RESULTS_PER_PAGE = 20;
+
 // 页面初始化
 document.addEventListener('DOMContentLoaded', function() {
     // 初始化API复选框
@@ -612,7 +617,11 @@ async function search() {
     
     try {
         // 保存搜索历史
-        saveSearchHistory(query);
+        try {
+            saveSearchHistory(query);
+        } catch (e) {
+            console.warn('保存搜索历史失败:', e);
+        }
         
         // 从所有选中的API源搜索
         let allResults = [];
@@ -762,6 +771,11 @@ async function search() {
         }
         
         const resultsDiv = document.getElementById('results');
+        if (!resultsDiv) {
+            console.warn('Search results container not found.');
+            hideLoading();
+            return;
+        }
         
         // 如果没有结果
         if (!allResults || allResults.length === 0) {
@@ -1456,7 +1470,7 @@ function buildPagination(totalPages) {
         pagination.appendChild(btn);
     };
 
-    createBtn('???', Math.max(1, currentSearchPage - 1), currentSearchPage === 1);
+    createBtn('上一页', Math.max(1, currentSearchPage - 1), currentSearchPage === 1);
 
     const maxButtons = 7;
     let start = Math.max(1, currentSearchPage - 3);
@@ -1469,7 +1483,7 @@ function buildPagination(totalPages) {
         createBtn(String(i), i, false, i === currentSearchPage);
     }
 
-    createBtn('???', Math.min(totalPages, currentSearchPage + 1), currentSearchPage === totalPages);
+    createBtn('下一页', Math.min(totalPages, currentSearchPage + 1), currentSearchPage === totalPages);
 }
 
 function renderResultsPage(page) {
