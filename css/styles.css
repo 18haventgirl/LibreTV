@@ -146,6 +146,20 @@ button, .card-hover {
     hyphens: auto; /* 允许断词 */
 }
 
+/* 强制卡片文字高对比，避免被其它类覆盖成黑色 */
+.card-hover h3,
+.card-hover .text-black,
+.card-hover .text-gray-900,
+.card-hover .text-gray-800 {
+    color: var(--text-color) !important;
+}
+
+.card-hover p,
+.card-hover .text-gray-400,
+.card-hover .text-gray-500 {
+    color: var(--text-muted) !important;
+}
+
 .card-hover::before {
     content: "";
     position: absolute;
