@@ -112,7 +112,7 @@
 // function createErrorVersionElement(errorMessage) {
 //     const errorElement = document.createElement('p');
 //     errorElement.className = 'text-gray-500 text-sm mt-1 text-center md:text-left';
-//     errorElement.innerHTML = `版本: <span class="text-amber-500">检测失败</span>`;
+//     errorElement.innerHTML = `版本: <span class="text-red-500">检测失败</span>`;
 //     errorElement.title = errorMessage;
 //     return errorElement;
 // }
@@ -154,7 +154,7 @@
 //         //     }, 100);
 //         // } else {
 //         //     // 如果没有更新，显示当前版本为最新版本
-//         //     versionElement.innerHTML = `版本: ${result.currentFormatted} <span class="text-green-500">(最新版本)</span>`;
+//         //     versionElement.innerHTML = `版本: ${result.currentFormatted} <span class="text-red-500">(最新版本)</span>`;
 //         // }
 //
 //         // 显示版本元素

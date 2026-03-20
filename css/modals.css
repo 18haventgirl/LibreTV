@@ -33,7 +33,7 @@
 .modal-title {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(to right, #00ccff, #ff3c78);
+    background: linear-gradient(to right, #e50914, #ff3b45);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     word-break: break-word;
@@ -42,7 +42,7 @@
 }
 
 .modal-close {
-    color: #9ca3af;
+    color: #b3b3b3;
     font-size: 1.5rem;
     transition: color 0.2s;
     flex-shrink: 0;
@@ -84,7 +84,7 @@
 
 .password-submit {
     width: 100%;
-    background-color: #3b82f6;
+    background-color: #e50914;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
@@ -92,11 +92,11 @@
 }
 
 .password-submit:hover {
-    background-color: #2563eb;
+    background-color: #b20710;
 }
 
 .password-error {
-    color: #ef4444;
+    color: #e50914;
     margin-top: 0.5rem;
     display: none;
 }
@@ -107,7 +107,7 @@
 }
 
 .disclaimer-content {
-    color: #d1d5db;
+    color: #b3b3b3;
     line-height: 1.5;
 }
 
@@ -116,13 +116,13 @@
 }
 
 .disclaimer-content strong {
-    color: #60a5fa;
+    color: #ff3b45;
 }
 
 .disclaimer-button {
     margin-top: 1.5rem;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(to right, #4f46e5, #8b5cf6, #ec4899);
+    background: linear-gradient(to right, #e50914, #b20710, #ff3b45);
     color: white;
     font-weight: 600;
     border-radius: 0.5rem;
@@ -140,7 +140,7 @@
     top: 1rem;
     left: 50%;
     transform: translateX(-50%) translateY(-100%);
-    background-color: #ef4444;
+    background-color: #e50914;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;

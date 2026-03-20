@@ -86,7 +86,7 @@ function initAPICheckboxes() {
         checkbox.className = 'flex items-center';
         checkbox.innerHTML = `
             <input type="checkbox" id="api_${apiKey}" 
-                   class="form-checkbox h-3 w-3 text-blue-600 bg-[#222] border border-[#333]" 
+                   class="form-checkbox h-3 w-3 text-red-600 bg-[#222] border border-[#333]" 
                    ${checked ? 'checked' : ''} 
                    data-api="${apiKey}">
             <label for="api_${apiKey}" class="ml-1 text-xs text-gray-400 truncate">${api.name}</label>
@@ -138,10 +138,10 @@ function addAdultAPI() {
             checkbox.className = 'flex items-center';
             checkbox.innerHTML = `
                 <input type="checkbox" id="api_${apiKey}" 
-                       class="form-checkbox h-3 w-3 text-blue-600 bg-[#222] border border-[#333] api-adult" 
+                       class="form-checkbox h-3 w-3 text-red-600 bg-[#222] border border-[#333] api-adult" 
                        ${checked ? 'checked' : ''} 
                        data-api="${apiKey}">
-                <label for="api_${apiKey}" class="ml-1 text-xs text-yellow-400 truncate">${api.name}</label>
+                <label for="api_${apiKey}" class="ml-1 text-xs text-red-400 truncate">${api.name}</label>
             `;
             adultdiv.appendChild(checkbox);
             
@@ -180,7 +180,7 @@ function checkAdultAPIsSelected() {
         
         // 修改描述文字
         if (filterDescription) {
-            filterDescription.innerHTML = '<strong class="text-yellow-300">选中黄色资源站时无法启用此过滤</strong>';
+            filterDescription.innerHTML = '<strong class="text-red-300">选中黄色资源站时无法启用此过滤</strong>';
         }
         
         // 移除提示信息（如果存在）
@@ -220,14 +220,14 @@ function renderCustomAPIsList() {
     customAPIs.forEach((api, index) => {
         const apiItem = document.createElement('div');
         apiItem.className = 'flex items-center justify-between p-1 mb-1 bg-[#222] rounded';
-        const textColorClass = api.isAdult ? 'text-yellow-400' : 'text-white';
-        const adultTag = api.isAdult ? '<span class="text-xs text-yellow-400 mr-1">(18+)</span>' : '';
+        const textColorClass = api.isAdult ? 'text-red-400' : 'text-white';
+        const adultTag = api.isAdult ? '<span class="text-xs text-red-400 mr-1">(18+)</span>' : '';
         // 新增 detail 地址显示
         const detailLine = api.detail ? `<div class="text-xs text-gray-400 truncate">detail: ${api.detail}</div>` : '';
         apiItem.innerHTML = `
             <div class="flex items-center flex-1 min-w-0">
                 <input type="checkbox" id="custom_api_${index}" 
-                       class="form-checkbox h-3 w-3 text-blue-600 mr-1 ${api.isAdult ? 'api-adult' : ''}" 
+                       class="form-checkbox h-3 w-3 text-red-600 mr-1 ${api.isAdult ? 'api-adult' : ''}" 
                        ${selectedAPIs.includes('custom_' + index) ? 'checked' : ''} 
                        data-custom-index="${index}">
                 <div class="flex-1 min-w-0">
@@ -239,7 +239,7 @@ function renderCustomAPIsList() {
                 </div>
             </div>
             <div class="flex items-center">
-                <button class="text-blue-500 hover:text-blue-700 text-xs px-1" onclick="editCustomApi(${index})">✎</button>
+                <button class="text-red-500 hover:text-red-700 text-xs px-1" onclick="editCustomApi(${index})">✎</button>
                 <button class="text-red-500 hover:text-red-700 text-xs px-1" onclick="removeCustomApi(${index})">✕</button>
             </div>
         `;
@@ -265,8 +265,8 @@ function editCustomApi(index) {
         form.classList.remove('hidden');
         const buttonContainer = form.querySelector('div:last-child');
         buttonContainer.innerHTML = `
-            <button onclick="updateCustomApi(${index})" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-xs">更新</button>
-            <button onclick="cancelEditCustomApi()" class="bg-[#444] hover:bg-[#555] text-white px-3 py-1 rounded text-xs">取消</button>
+            <button onclick="updateCustomApi(${index})" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-xs">更新</button>
+            <button onclick="cancelEditCustomApi()" class="bg-[#222] hover:bg-[#333] text-white px-3 py-1 rounded text-xs">取消</button>
         `;
     }
 }
@@ -326,8 +326,8 @@ function restoreAddCustomApiButtons() {
     const form = document.getElementById('addCustomApiForm');
     const buttonContainer = form.querySelector('div:last-child');
     buttonContainer.innerHTML = `
-        <button onclick="addCustomApi()" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-xs">添加</button>
-        <button onclick="cancelAddCustomApi()" class="bg-[#444] hover:bg-[#555] text-white px-3 py-1 rounded text-xs">取消</button>
+        <button onclick="addCustomApi()" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-xs">添加</button>
+        <button onclick="cancelAddCustomApi()" class="bg-[#222] hover:bg-[#333] text-white px-3 py-1 rounded text-xs">取消</button>
     `;
 }
 
@@ -843,11 +843,11 @@ async function search() {
                                 
                                 <div class="flex flex-wrap ${hasCover ? '' : 'justify-center'} gap-1 mb-2">
                                     ${(item.type_name || '').toString().replace(/</g, '&lt;') ? 
-                                      `<span class="text-xs py-0.5 px-1.5 rounded bg-opacity-20 bg-blue-500 text-blue-300">
+                                      `<span class="text-xs py-0.5 px-1.5 rounded bg-opacity-20 bg-red-600 text-red-300">
                                           ${(item.type_name || '').toString().replace(/</g, '&lt;')}
                                       </span>` : ''}
                                     ${(item.vod_year || '') ? 
-                                      `<span class="text-xs py-0.5 px-1.5 rounded bg-opacity-20 bg-purple-500 text-purple-300">
+                                      `<span class="text-xs py-0.5 px-1.5 rounded bg-opacity-20 bg-red-600 text-red-300">
                                           ${item.vod_year}
                                       </span>` : ''}
                                 </div>
@@ -860,7 +860,7 @@ async function search() {
                                 ${sourceInfo ? `<div>${sourceInfo}</div>` : '<div></div>'}
                                 <!-- 接口名称过长会被挤变形
                                 <div>
-                                    <span class="text-gray-500 flex items-center hover:text-blue-400 transition-colors">
+                                    <span class="text-gray-500 flex items-center hover:text-red-400 transition-colors">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                                         </svg>
@@ -1030,7 +1030,7 @@ async function showDetails(id, vod_name, sourceCode) {
                 <div class="flex flex-wrap items-center justify-between mb-4 gap-2">
                     <div class="flex items-center gap-2">
                         <button onclick="toggleEpisodeOrder('${sourceCode}', '${id}')" 
-                                class="px-3 py-1.5 bg-[#333] hover:bg-[#444] border border-[#444] rounded text-sm transition-colors flex items-center gap-1">
+                                class="px-3 py-1.5 bg-[#333] hover:bg-[#222] border border-[#444] rounded text-sm transition-colors flex items-center gap-1">
                             <svg class="w-4 h-4 transform ${episodesReversed ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                             </svg>
@@ -1038,7 +1038,7 @@ async function showDetails(id, vod_name, sourceCode) {
                         </button>
                         <span class="text-gray-400 text-sm">共 ${data.episodes.length} 集</span>
                     </div>
-                    <button onclick="copyLinks()" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded text-sm transition-colors">
+                    <button onclick="copyLinks()" class="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded text-sm transition-colors">
                         复制链接
                     </button>
                 </div>
@@ -1235,12 +1235,12 @@ async function importConfigFromUrl() {
             
             <div class="mb-4">
                 <input type="text" id="configUrl" placeholder="输入配置文件URL" 
-                       class="w-full px-3 py-2 bg-[#222] border border-[#333] rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-blue-500">
+                       class="w-full px-3 py-2 bg-[#222] border border-[#333] rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-red-500">
             </div>
             
             <div class="flex justify-end space-x-2">
-                <button id="confirmUrlImport" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">导入</button>
-                <button id="cancelUrlImport" class="bg-[#444] hover:bg-[#555] text-white px-4 py-2 rounded">取消</button>
+                <button id="confirmUrlImport" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">导入</button>
+                <button id="cancelUrlImport" class="bg-[#222] hover:bg-[#333] text-white px-4 py-2 rounded">取消</button>
             </div>
         </div>`;
 

@@ -460,7 +460,7 @@ function initPlayer(videoUrl) {
         autoPlayback: false,
         airplay: true,
         hotkey: false,
-        theme: '#23ade5',
+        theme: '#e50914',
         lang: navigator.language.toLowerCase(),
         moreVideoAttr: {
             crossOrigin: 'anonymous',
@@ -767,7 +767,7 @@ function initPlayer(videoUrl) {
             loadingElement.innerHTML = `
                 <div class="loading-spinner"></div>
                 <div>视频加载时间较长，请耐心等待...</div>
-                <div style="font-size: 12px; color: #aaa; margin-top: 10px;">如长时间无响应，请尝试其他视频源</div>
+                <div style="font-size: 12px; color: #b3b3b3; margin-top: 10px;">如长时间无响应，请尝试其他视频源</div>
             `;
         }
     }, 10000);
@@ -890,7 +890,7 @@ function renderEpisodes() {
         html += `
             <button id="episode-${realIndex}" 
                     onclick="playEpisode(${realIndex})" 
-                    class="px-4 py-2 ${isActive ? 'episode-active' : '!bg-[#222] hover:!bg-[#333] hover:!shadow-none'} !border ${isActive ? '!border-blue-500' : '!border-[#333]'} rounded-lg transition-colors text-center episode-btn">
+                    class="px-4 py-2 ${isActive ? 'episode-active' : '!bg-[#222] hover:!bg-[#333] hover:!shadow-none'} !border ${isActive ? '!border-red-500' : '!border-[#333]'} rounded-lg transition-colors text-center episode-btn">
                 ${realIndex + 1}
             </button>
         `;
