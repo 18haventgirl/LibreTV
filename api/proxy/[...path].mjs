@@ -173,12 +173,17 @@ async function fetchContentWithType(targetUrl, requestHeaders) {
             throw err; // 抛出错误
         }
 
+        const contentType = response.headers.get('content-type') || '';
+        if (isMediaFile(targetUrl, contentType)) {
+            const content = await response.arrayBuffer();
+            logDebug(`请求成功(二进制): ${targetUrl}, Content-Type: ${contentType}, 长度: ${content.byteLength}`);
+            return { content, contentType, responseHeaders: response.headers, isBinary: true };
+        }
         // 读取响应内容
         const content = await response.text();
-        const contentType = response.headers.get('content-type') || '';
         logDebug(`请求成功: ${targetUrl}, Content-Type: ${contentType}, 内容长度: ${content.length}`);
         // 返回结果
-        return { content, contentType, responseHeaders: response.headers };
+        return { content, contentType, responseHeaders: response.headers, isBinary: false };
 
     } catch (error) {
         // 捕获 fetch 本身的错误（网络、超时等）或上面抛出的 HTTP 错误
@@ -377,10 +382,10 @@ export default async function handler(req, res) {
         console.info(`开始处理目标 URL 的代理请求: ${targetUrl}`);
 
         // --- 获取并处理目标内容 ---
-        const { content, contentType, responseHeaders } = await fetchContentWithType(targetUrl, req.headers);
+        const { content, contentType, responseHeaders, isBinary } = await fetchContentWithType(targetUrl, req.headers);
 
         // --- 如果是 M3U8，处理并返回 ---
-        if (isM3u8Content(content, contentType)) {
+        if (!isBinary && isM3u8Content(content, contentType)) {
             console.info(`正在处理 M3U8 内容: ${targetUrl}`);
             const processedM3u8 = await processM3u8Content(targetUrl, content);
 
@@ -410,8 +415,12 @@ export default async function handler(req, res) {
             // 设置我们自己的缓存策略
             res.setHeader('Cache-Control', `public, max-age=${CACHE_TTL}`);
 
-            // 发送原始（已解压）内容
-            res.status(200).send(content);
+            // 发送原始内容
+            if (isBinary) {
+                res.status(200).send(Buffer.from(content));
+            } else {
+                res.status(200).send(content);
+            }
         }
 
     // ---- 结束主处理逻辑的 try 块 ----
