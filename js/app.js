@@ -556,32 +556,10 @@ function enableHorizontalWheelScroll() {
     const rows = document.querySelectorAll('.netflix-row');
     if (!rows || rows.length === 0) return;
 
-    const stateMap = new WeakMap();
-
-    const animateScroll = (row) => {
-        const state = stateMap.get(row);
-        if (!state) return;
-        const maxScroll = row.scrollWidth - row.clientWidth;
-        state.target = Math.max(0, Math.min(state.target, maxScroll));
-        const delta = state.target - row.scrollLeft;
-        if (Math.abs(delta) < 0.5) {
-            row.scrollLeft = state.target;
-            state.raf = null;
-            return;
-        }
-        row.scrollLeft += delta * 0.18;
-        state.raf = requestAnimationFrame(() => animateScroll(row));
-    };
-
     rows.forEach(row => {
-        stateMap.set(row, { target: row.scrollLeft, raf: null });
         row.addEventListener('wheel', (e) => {
             if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-                const state = stateMap.get(row);
-                state.target += e.deltaY;
-                if (!state.raf) {
-                    state.raf = requestAnimationFrame(() => animateScroll(row));
-                }
+                row.scrollLeft += e.deltaY;
                 e.preventDefault();
             }
         }, { passive: false });
