@@ -1,10 +1,10 @@
 /*
 LibreTV 全局样式
 包含多个页面共享的基础样式
-对于特定页面的样式，请参考:
+对于特定页面的样式，请参�?
 - index.css: 首页特定样式
-- player.css: 播放器页面特定样式
-- watch.css: 重定向页面特定样式
+- player.css: 播放器页面特定样�?
+- watch.css: 重定向页面特定样�?
 - modals.css: 模态框和提示框样式
 */
 
@@ -27,7 +27,7 @@ LibreTV 全局样式
 
 .close-btn:hover {
     background: #2b2b2b;
-    border-color: rgba(229, 9, 20, 0.4);
+    border-color: rgba(var(--accent-rgb), 0.4);
 }
 
 .close-btn svg {
@@ -37,30 +37,30 @@ LibreTV 全局样式
 }
 
 
-/*    !* 赛博影视主题配色方案 - 柔和版 *!*/
-/*    --primary-color: #e50914;       !* 霓虹蓝主色调 *!*/
+/*    !* 赛博影视主题配色方案 - 柔和�?*!*/
+/*    --primary-color: var(--primary-color);       !* 霓虹蓝主色调 *!*/
 /*    --primary-light: #e50914;       !* 浅霓虹蓝变体 *!*/
 /*    --secondary-color: #0b0b0b;     !* 深蓝黑背景色 *!*/
-/*    --accent-color: #ff3b45;        !* 霓虹粉强调色 *!*/
-/*    --text-color: #f5f5f1;          !* 柔和的蓝白色文本 *!*/
+/*    --accent-color: var(--primary-light);        !* 霓虹粉强调色 *!*/
+/*    --text-color: var(--text-color);          !* 柔和的蓝白色文本 *!*/
 /*    --text-muted: #b3b3b3;          !* 淡蓝灰色次级文本 *!*/
 /*    --border-color: rgba(0, 204, 255, 0.15);*/
 /*    --page-gradient-start: #0b0b0b; !* 深蓝黑起始色 *!*/
 /*    --page-gradient-end: #151515;   !* 深靛蓝结束色 *!*/
-/*    --card-gradient-start: #141414; !* 卡片起始色 *!*/
-/*    --card-gradient-end: #1f1f1f;   !* 卡片结束色 *!*/
+/*    --card-gradient-start: #141414; !* 卡片起始�?*!*/
+/*    --card-gradient-end: #1f1f1f;   !* 卡片结束�?*!*/
 /*    --card-accent: rgba(0, 204, 255, 0.12); !* 霓虹蓝卡片强调色 *!*/
 /*    --card-hover-border: rgba(0, 204, 255, 0.5); !* 悬停边框颜色 *!*/
 /*}*/
 
 
 :root {
-    /* Refined cinematic palette */
-    --primary-color: #e50914;
+    /* Cinema (default) */
+    --primary-color: var(--primary-color);
     --primary-light: #ff3b45;
     --primary-dark: #b20710;
-    --accent-color: #e50914;
-    --text-color: #f5f5f1;
+    --accent-color: var(--primary-color);
+    --text-color: var(--text-color);
     --text-muted: #b3b3b3;
     --secondary-color: #0b0b0b;
     --border-color: rgba(255, 255, 255, 0.08);
@@ -68,26 +68,95 @@ LibreTV 全局样式
     --page-gradient-end: #151515;
     --card-gradient-start: #141414;
     --card-gradient-end: #1f1f1f;
-    --card-accent: rgba(229, 9, 20, 0.16);
-    --card-hover-border: rgba(229, 9, 20, 0.55);
+    --card-accent: rgba(var(--accent-rgb), 0.16);
+    --card-hover-border: rgba(var(--accent-rgb), 0.55);
     --panel-bg: rgba(20, 20, 20, 0.92);
     --panel-border: rgba(255, 255, 255, 0.08);
+    --glow-1: rgba(var(--accent-rgb), 0.12);
+    --glow-2: rgba(var(--accent-rgb), 0.08);
+    --accent-rgb: 229, 9, 20;
+}
+
+:root[data-theme="ocean"] {
+    --primary-color: #2fb7ff;
+    --primary-light: #6ed0ff;
+    --primary-dark: #1b6fb8;
+    --accent-color: #2fb7ff;
+    --text-color: #eef6ff;
+    --text-muted: #9bb3c8;
+    --secondary-color: #07141f;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --page-gradient-start: #07141f;
+    --page-gradient-end: #0d1f2e;
+    --card-gradient-start: #0d1b26;
+    --card-gradient-end: #122532;
+    --card-accent: rgba(47, 183, 255, 0.18);
+    --card-hover-border: rgba(47, 183, 255, 0.5);
+    --panel-bg: rgba(9, 16, 24, 0.92);
+    --panel-border: rgba(255, 255, 255, 0.08);
+    --glow-1: rgba(47, 183, 255, 0.16);
+    --glow-2: rgba(47, 183, 255, 0.1);
+    --accent-rgb: 47, 183, 255;
+}
+
+:root[data-theme="forest"] {
+    --primary-color: #3bb273;
+    --primary-light: #69d18f;
+    --primary-dark: #2a7c52;
+    --accent-color: #3bb273;
+    --text-color: #edf6f0;
+    --text-muted: #9ab3a6;
+    --secondary-color: #0b1511;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --page-gradient-start: #0b1511;
+    --page-gradient-end: #122018;
+    --card-gradient-start: #0f1a14;
+    --card-gradient-end: #15221a;
+    --card-accent: rgba(59, 178, 115, 0.16);
+    --card-hover-border: rgba(59, 178, 115, 0.5);
+    --panel-bg: rgba(12, 18, 14, 0.92);
+    --panel-border: rgba(255, 255, 255, 0.08);
+    --glow-1: rgba(59, 178, 115, 0.16);
+    --glow-2: rgba(59, 178, 115, 0.1);
+    --accent-rgb: 59, 178, 115;
+}
+
+:root[data-theme="sunset"] {
+    --primary-color: #ff6b1a;
+    --primary-light: #ff9a5c;
+    --primary-dark: #c54810;
+    --accent-color: #ff6b1a;
+    --text-color: #fff3e8;
+    --text-muted: #c8a999;
+    --secondary-color: #1a0f0b;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --page-gradient-start: #1a0f0b;
+    --page-gradient-end: #2a1410;
+    --card-gradient-start: #20100c;
+    --card-gradient-end: #2a1611;
+    --card-accent: rgba(255, 107, 26, 0.18);
+    --card-hover-border: rgba(255, 107, 26, 0.5);
+    --panel-bg: rgba(20, 12, 9, 0.92);
+    --panel-border: rgba(255, 255, 255, 0.08);
+    --glow-1: rgba(255, 107, 26, 0.16);
+    --glow-2: rgba(255, 107, 26, 0.1);
+    --accent-rgb: 255, 107, 26;
 }
 
 
 
 /*    !* 蓝绿清新配色方案 *!*/
-/*    --primary-color: #b3b3b3;       !* 湖水绿主色调 *!*/
+/*    --primary-color: var(--text-muted);       !* 湖水绿主色调 *!*/
 /*    --primary-light: #b3b3b3;       !* 浅湖水绿变体 *!*/
 /*    --secondary-color: #151515;     !* 浅灰白背景色 *!*/
-/*    --accent-color: #e50914;        !* 蓝色强调色 *!*/
-/*    --text-color: #141414;          !* 深灰蓝文本 *!*/
-/*    --text-muted: #b3b3b3;          !* 暗青灰次级文本 *!*/
+/*    --accent-color: var(--primary-color);        !* 蓝色强调�?*!*/
+/*    --text-color: #141414;          !* 深灰蓝文�?*!*/
+/*    --text-muted: #b3b3b3;          !* 暗青灰次级文�?*!*/
 /*    --border-color: rgba(59, 185, 168, 0.2);*/
 /*    --page-gradient-start: #151515; !* 淡青绿色渐变起点 *!*/
 /*    --page-gradient-end: #151515;   !* 极浅白绿渐变终点 *!*/
-/*    --card-gradient-start: #ffffff; !* 卡片起始色 *!*/
-/*    --card-gradient-end: #1f1f1f;   !* 卡片结束色 *!*/
+/*    --card-gradient-start: #ffffff; !* 卡片起始�?*!*/
+/*    --card-gradient-end: #1f1f1f;   !* 卡片结束�?*!*/
 /*    --card-accent: rgba(59, 185, 168, 0.12); !* 湖水绿卡片强调色 *!*/
 /*    --card-hover-border: rgba(59, 185, 168, 0.4); !* 悬停边框 *!*/
 /*}*/
@@ -99,8 +168,8 @@ LibreTV 全局样式
     /* Dark ambience + subtle grain */
     background-image:
         linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end)),
-        radial-gradient(circle at 18% 12%, rgba(229, 9, 20, 0.12), transparent 48%),
-        radial-gradient(circle at 85% 0%, rgba(229, 9, 20, 0.08), transparent 55%),
+        radial-gradient(circle at 18% 12%, var(--glow-1), transparent 48%),
+        radial-gradient(circle at 85% 0%, var(--glow-2), transparent 55%),
         radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.035) 1px, transparent 2px),
         radial-gradient(circle at 70px 70px, rgba(255, 255, 255, 0.02) 1px, transparent 2px);
     background-blend-mode: normal;
@@ -125,14 +194,14 @@ button, .card-hover {
     color: var(--text-color);
 }
 
-/* 确保卡片内容区域高度一致性 */
+/* 确保卡片内容区域高度一致�?*/
 .card-hover .flex-grow {
-    min-height: unset; /* 移除最小高度限制，让内容自然流动 */
+    min-height: unset; /* 移除最小高度限制，让内容自然流�?*/
     display: flex;
     flex-direction: column;
 }
 
-/* 针对不同长度的标题优化显示 */
+/* 针对不同长度的标题优化显�?*/
 .card-hover h3 {
     min-height: unset;
     max-height: unset;
@@ -146,7 +215,7 @@ button, .card-hover {
     hyphens: auto; /* 允许断词 */
 }
 
-/* 强制卡片文字高对比，避免被其它类覆盖成黑色 */
+/* 强制卡片文字高对比，避免被其它类覆盖成黑�?*/
 .card-hover h3,
 .card-hover .text-black,
 .card-hover .text-gray-900,
@@ -348,7 +417,7 @@ body {
 #modal > div {
     background: linear-gradient(135deg, var(--card-gradient-start), var(--card-gradient-end));
     border: 1px solid var(--panel-border);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 18px rgba(229, 9, 20, 0.1);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 18px rgba(var(--accent-rgb), 0.1);
     border-radius: 8px;
 }
 
@@ -360,9 +429,9 @@ body {
 }
 
 #episodesGrid button:hover {
-    background: rgba(229, 9, 20, 0.15);
-    border-color: rgba(229, 9, 20, 0.5);
-    box-shadow: 0 0 12px rgba(229, 9, 20, 0.25);
+    background: rgba(var(--accent-rgb), 0.15);
+    border-color: rgba(var(--accent-rgb), 0.5);
+    box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.25);
 }
 
 #yellowFilterToggle:checked + .toggle-bg {
@@ -375,7 +444,7 @@ body {
 
 #yellowFilterToggle:focus + .toggle-bg,
 #yellowFilterToggle:hover + .toggle-bg {
-    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.3);
+    box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.3);
 }
 
 /* 添加广告过滤开关的CSS */
@@ -389,7 +458,7 @@ body {
 
 #adFilterToggle:focus + .toggle-bg,
 #adFilterToggle:hover + .toggle-bg {
-    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.3);
+    box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.3);
 }
 
 .toggle-dot {
@@ -402,11 +471,11 @@ body {
 }
 
 #yellowFilterToggle:checked ~ .toggle-dot {
-    box-shadow: 0 2px 6px rgba(229, 9, 20, 0.4);
+    box-shadow: 0 2px 6px rgba(var(--accent-rgb), 0.4);
 }
 
 #adFilterToggle:checked ~ .toggle-dot {
-    box-shadow: 0 2px 6px rgba(229, 9, 20, 0.4);
+    box-shadow: 0 2px 6px rgba(var(--accent-rgb), 0.4);
 }
 
 /* 添加API复选框样式 */
@@ -520,15 +589,15 @@ body {
 
 /* 成人内容API标记样式 */
 .api-adult + label {
-    color: #ff3b45 !important;
+    color: var(--primary-light) !important;
 }
 
-/* 添加警告图标和标签样式 */
+/* 添加警告图标和标签样�?*/
 .adult-warning {
     display: inline-flex;
     align-items: center;
     margin-left: 0.25rem;
-    color: #ff3b45;
+    color: var(--primary-light);
 }
 
 .adult-warning svg {
@@ -537,30 +606,30 @@ body {
     margin-right: 4px;
 }
 
-/* 过滤器禁用样式 */
+/* 过滤器禁用样�?*/
 .filter-disabled {
     opacity: 0.5;
     pointer-events: none;
     cursor: not-allowed;
 }
 
-/* API组标题样式 */
+/* API组标题样�?*/
 .api-group-title {
     grid-column: span 2;
     padding: 0.25rem 0;
     margin-top: 0.5rem;
     border-top: 1px solid #333;
-    color: #b3b3b3;
+    color: var(--text-muted);
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .api-group-title.adult {
-    color: #ff3b45;
+    color: var(--primary-light);
 }
 
-/* 过滤器禁用样式 - 改进版本 */
+/* 过滤器禁用样�?- 改进版本 */
 .filter-disabled {
     position: relative;
 }
@@ -587,12 +656,12 @@ body {
 
 .filter-disabled .toggle-dot {
     transform: translateX(0) !important;
-    background-color: #b3b3b3 !important;
+    background-color: var(--text-muted) !important;
 }
 
-/* 改进过滤器禁用样式 */
+/* 改进过滤器禁用样�?*/
 .filter-disabled .filter-description {
-    color: #ff3b45 !important;
+    color: var(--primary-light) !important;
     font-style: italic;
     font-weight: 500;
 }
@@ -615,16 +684,16 @@ body {
 }
 
 .filter-disabled > * {
-    opacity: 1; /* 提高子元素不透明度，保证可见性 */
-    z-index: 6; /* 确保内容在遮罩上方 */
+    opacity: 1; /* 提高子元素不透明度，保证可见�?*/
+    z-index: 6; /* 确保内容在遮罩上�?*/
 }
 
-/* 改进过滤器禁用状态下的描述样式 */
+/* 改进过滤器禁用状态下的描述样�?*/
 .filter-disabled .filter-description {
-    color: #ff3b45 !important; /* 更亮的粉色 */
+    color: var(--primary-light) !important; /* 更亮的粉�?*/
     font-style: italic;
     font-weight: 500;
-    text-shadow: 0 0 2px rgba(0,0,0,0.8); /* 添加文字阴影提高对比度 */
+    text-shadow: 0 0 2px rgba(0,0,0,0.8); /* 添加文字阴影提高对比�?*/
 }
 
 /* 开关的禁用样式 */
@@ -635,14 +704,14 @@ body {
 
 .filter-disabled .toggle-dot {
     transform: translateX(0) ;
-    background-color: #b3b3b3 ;
+    background-color: var(--text-muted) ;
     opacity: 0.9;
 }
 
 /* 警告提示样式改进 */
 .filter-tooltip {
-    background-color: rgba(255, 61, 87, 0.1);
-    border: 1px solid rgba(255, 61, 87, 0.2);
+    background-color: rgba(var(--accent-rgb), 0.1);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
     border-radius: 0.25rem;
     padding: 0.5rem;
     margin-top: 0.5rem;
@@ -663,12 +732,12 @@ body {
 
 /* 编辑按钮样式 */
 .custom-api-edit {
-    color: #e50914;
+    color: var(--primary-color);
     transition: color 0.2s ease;
 }
 
 .custom-api-edit:hover {
-    color: #b20710;
+    color: var(--primary-dark);
 }
 
 /* 自定义API条目样式改进 */
@@ -691,7 +760,7 @@ body {
 .adult-tag {
     display: inline-flex;
     align-items: center;
-    color: #ff3b45;
+    color: var(--primary-light);
     font-size: 0.7rem;
     font-weight: 500;
     margin-right: 0.35rem;
@@ -704,7 +773,7 @@ body {
     overflow-y: scroll; /* 始终显示滚动条，防止宽度变化 */
     overflow-x: hidden; /* 防止水平滚动 */
     width: 320px; /* 固定宽度 */
-    box-sizing: border-box; /* 确保padding不影响总宽度 */
+    box-sizing: border-box; /* 确保padding不影响总宽�?*/
     scrollbar-gutter: stable; /* 现代浏览器：为滚动条预留空间 */
 }
 
@@ -713,10 +782,10 @@ body {
 }
 
 #historyList {
-    padding-right: 6px; /* 为滚动条预留空间，确保内容不被挤压 */
+    padding-right: 6px; /* 为滚动条预留空间，确保内容不被挤�?*/
 }
 
-/* 历史记录项样式优化 */
+/* 历史记录项样式优�?*/
 .history-item {
     background: #1a1a1a;
     border-radius: 10px; /* 减小圆角 */
@@ -726,7 +795,7 @@ body {
     padding: 10px 14px;
     position: relative;
     margin-bottom: 8px; /* 减小底部间距 */
-    width: 100%; /* 确保宽度一致 */
+    width: 100%; /* 确保宽度一�?*/
 }
 
 .history-item:hover {
@@ -735,7 +804,7 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* 添加组悬停效果，使删除按钮在悬停时显示 */
+/* 添加组悬停效果，使删除按钮在悬停时显�?*/
 .history-item .delete-btn {
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -768,11 +837,11 @@ body {
 }
 
 .history-episode {
-    color: #e50914;
+    color: var(--primary-color);
 }
 
 .history-source {
-    color: #b3b3b3;
+    color: var(--text-muted);
 }
 
 .history-time {
@@ -782,7 +851,7 @@ body {
 }
 
 .history-separator {
-    color: #b3b3b3;
+    color: var(--text-muted);
 }
 
 .history-thumbnail {
@@ -815,7 +884,7 @@ body {
     text-overflow: ellipsis;
 }
 
-/* 添加播放进度条样式 */
+/* 添加播放进度条样�?*/
 .history-progress {
     margin: 5px 0;
 }
@@ -830,7 +899,7 @@ body {
 
 .progress-filled {
     height: 100%;
-    background: linear-gradient(to right, #e50914, #e50914);
+    background: linear-gradient(to right, var(--primary-color), var(--primary-color));
     border-radius: 2px;
 }
 
@@ -861,7 +930,7 @@ body {
     transform: translateX(-50%) translateY(0);
 }
 
-/* 锁定控制时屏蔽交互 */
+/* 锁定控制时屏蔽交�?*/
 .player-container.controls-locked .dplayer-controller,
 .player-container.controls-locked .dplayer-mask,
 .player-container.controls-locked .dplayer-bar-wrap,
@@ -870,13 +939,13 @@ body {
     opacity: 0 !important;
     pointer-events: none !important;
 }
-/* 保留锁按钮可见可点 */
+/* 保留锁按钮可见可�?*/
 .player-container.controls-locked #lockToggle {
     opacity: 1 !important;
     pointer-events: auto !important;
 }
 
-/* 播放器顶部header移动端优化 */
+/* 播放器顶部header移动端优�?*/
 .player-header {
     gap: 0.5rem;
 }
@@ -920,8 +989,8 @@ body {
 
 /* 搜索结果卡片优化：横向布局 */
 .search-card-img-container {
-    width: 100px;  /* 增加宽度，从80px到100px */
-    height: 150px; /* 增加高度，从120px到150px */
+    width: 100px;  /* 增加宽度，从80px�?00px */
+    height: 150px; /* 增加高度，从120px�?50px */
     overflow: hidden;
     background-color: #191919;
 }
@@ -947,7 +1016,7 @@ body {
     }
 }
 
-/* 调整网格布局，减少每行卡片数量以适应更大尺寸的卡片 */
+/* 调整网格布局，减少每行卡片数量以适应更大尺寸的卡�?*/
 @media (min-width: 769px) and (max-width: 1024px) {
     #results {
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -960,12 +1029,12 @@ body {
     }
 }
 
-/* 优化卡片内元素间距 */
+/* 优化卡片内元素间�?*/
 .card-hover .p-2 {
-    padding: 0.75rem; /* 增加内边距 */
+    padding: 0.75rem; /* 增加内边�?*/
 }
 
-/* 增加卡片内字体大小 */
+/* 增加卡片内字体大�?*/
 .card-hover h3 {
     font-size: 0.95rem; /* 增加标题字体大小 */
     color:black;
@@ -977,12 +1046,12 @@ body {
     font-size: 0.8rem; /* 增加描述字体大小 */
 }
 
-/* 优化卡片内元素间距 */
+/* 优化卡片内元素间�?*/
 .card-hover .p-2 {
     padding: 0.5rem;
 }
 
-/* 确保Toast显示在顶层并有适当的转换效果 */
+/* 确保Toast显示在顶层并有适当的转换效�?*/
 #toast {
     z-index: 9999; /* 确保显示在最上层 */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -1027,7 +1096,7 @@ body {
 }
 
 #modal .detail-label {
-    color: #b3b3b3;
+    color: var(--text-muted);
     font-weight: 500;
     min-width: 3rem;
     flex-shrink: 0;
@@ -1046,7 +1115,7 @@ body {
 }
 
 #modal .detail-desc-content {
-    color: #b3b3b3;
+    color: var(--text-muted);
     font-size: 0.875rem;
     line-height: 1.6;
     max-height: 8rem;
@@ -1071,14 +1140,14 @@ body {
 
 /* 集数统计信息样式 */
 #modal .episode-stats {
-    color: #b3b3b3;
+    color: var(--text-muted);
     font-size: 0.875rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-/* 移动端优化 */
+/* 移动端优�?*/
 @media (max-width: 640px) {
     #modal .detail-grid {
         gap: 0.5rem;
@@ -1093,4 +1162,54 @@ body {
         max-height: 6rem;
         font-size: 0.8rem;
     }
+}
+
+
+
+
+/* Theme color overrides for utility classes */
+.text-red-300,
+.text-red-400,
+.text-red-500,
+.text-red-600 {
+    color: var(--primary-color) !important;
+}
+
+.text-red-400,
+.text-red-300 {
+    color: var(--primary-light) !important;
+}
+
+.bg-red-500,
+.bg-red-600 {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-red-700,
+.bg-red-800 {
+    background-color: var(--primary-dark) !important;
+}
+
+.border-red-500,
+.border-red-600 {
+    border-color: var(--primary-color) !important;
+}
+
+.hover\:bg-red-700:hover,
+.hover\:bg-red-800:hover {
+    background-color: var(--primary-dark) !important;
+}
+
+.hover\:bg-red-600:hover {
+    background-color: var(--primary-color) !important;
+}
+
+.hover\:text-red-400:hover,
+.hover\:text-red-500:hover,
+.hover\:text-red-700:hover {
+    color: var(--primary-light) !important;
+}
+
+.focus\:ring-red-500:focus {
+    box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.3) !important;
 }

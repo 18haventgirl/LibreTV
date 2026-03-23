@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" data-theme="forest">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -136,7 +136,8 @@
         width: 100vw;
         z-index: 9000 !important;
         pointer-events: auto !important;
-        background: #e50914;
+        background: var(--panel-bg);
+        border-bottom: 1px solid var(--panel-border);
       }
       #homeButton { pointer-events: auto !important; }
       body { padding-top: 72px; }

@@ -1,6 +1,6 @@
 /* ?????? */
 
-/* 历史记录和设置按钮定位样式 */
+/* 历史记录和设置按钮定位样�?*/
 .top-corner-button {
     position: relative;
     display: inline-flex;
@@ -15,7 +15,7 @@
 
 .top-corner-button:hover {
     background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(229, 9, 20, 0.4);
+    border-color: rgba(var(--accent-rgb), 0.4);
 }
 
 /* 搜索区域样式 */
@@ -51,7 +51,7 @@
     background: #111;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    color: #f5f5f1;
+    color: var(--text-color);
     padding: 0 1.5rem;
     font-size: 1rem;
     outline: none;
@@ -62,7 +62,7 @@
     background: #151515;
 }
 
-/* 最近搜索记录样式 */
+/* 最近搜索记录样�?*/
 .recent-search-tag {
     display: inline-block;
     padding: 0.3rem 0.9rem;
@@ -76,8 +76,8 @@
 }
 
 .recent-search-tag:hover {
-    background: rgba(229, 9, 20, 0.14);
-    border-color: rgba(229, 9, 20, 0.35);
+    background: rgba(var(--accent-rgb), 0.14);
+    border-color: rgba(var(--accent-rgb), 0.35);
     color: var(--text-color);
 }
 
@@ -126,17 +126,17 @@
 .douban-refresh-button {
     font-size: 0.875rem;
     padding: 0.25rem 0.85rem;
-    background: rgba(229, 9, 20, 0.14);
+    background: rgba(var(--accent-rgb), 0.14);
     color: var(--text-color);
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    border: 1px solid rgba(229, 9, 20, 0.3);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
 }
 
 .douban-refresh-button:hover {
-    background: rgba(229, 9, 20, 0.28);
+    background: rgba(var(--accent-rgb), 0.28);
 }
 
 .douban-tags-container {
@@ -161,15 +161,15 @@
 }
 
 .douban-tag:hover {
-    background: rgba(229, 9, 20, 0.14);
-    border-color: rgba(229, 9, 20, 0.35);
+    background: rgba(var(--accent-rgb), 0.14);
+    border-color: rgba(var(--accent-rgb), 0.35);
     color: var(--text-color);
 }
 
 
 .douban-tag.active {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    border-color: rgba(229, 9, 20, 0.5);
+    border-color: rgba(var(--accent-rgb), 0.5);
     color: white;
 }
 
@@ -305,14 +305,14 @@
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.08);
-    color: #f5f5f1;
+    color: var(--text-color);
     font-weight: 600;
     letter-spacing: 0.04em;
     transition: all 0.2s;
 }
 
 .search-action:hover {
-    background: rgba(229, 9, 20, 0.14);
+    background: rgba(var(--accent-rgb), 0.14);
 }
 
 .search-home {
@@ -335,7 +335,7 @@
     background: #111;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    color: #b3b3b3;
+    color: var(--text-muted);
 }
 
 .search-clear:hover {
@@ -403,11 +403,13 @@
 }
 
 #resultsPagination button:hover {
-    background: rgba(229, 9, 20, 0.2);
-    border-color: rgba(229, 9, 20, 0.4);
+    background: rgba(var(--accent-rgb), 0.2);
+    border-color: rgba(var(--accent-rgb), 0.4);
 }
 
 #resultsPagination button.active {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    border-color: rgba(229, 9, 20, 0.6);
+    border-color: rgba(var(--accent-rgb), 0.6);
 }
+
+

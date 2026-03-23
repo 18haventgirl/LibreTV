@@ -460,7 +460,7 @@ function initPlayer(videoUrl) {
         autoPlayback: false,
         airplay: true,
         hotkey: false,
-        theme: '#e50914',
+        theme: getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim() || '#e50914',
         lang: navigator.language.toLowerCase(),
         moreVideoAttr: {
             crossOrigin: 'anonymous',

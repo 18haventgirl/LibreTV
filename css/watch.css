@@ -88,15 +88,15 @@ body {
     transition: all 0.2s ease;
     padding: 5px 10px;
     border-radius: 4px;
-    background-color: rgba(229, 9, 20, 0.12);
+    background-color: rgba(var(--accent-rgb), 0.12);
 }
 
 .redirect-hint a:hover {
-    background-color: rgba(229, 9, 20, 0.24);
+    background-color: rgba(var(--accent-rgb), 0.24);
     text-decoration: underline;
 }
 
-/* 移动端优化 */
+/* 移动端优�?*/
 @media (max-width: 480px) {
     .redirect-container {
         padding: 1.5rem;
@@ -126,3 +126,5 @@ body {
         font-size: 0.8rem;
     }
 }
+
+
