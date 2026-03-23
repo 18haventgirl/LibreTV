@@ -569,6 +569,11 @@ function renderDoubanCards(data, container) {
     // 清空并添加所有新元素
     container.innerHTML = "";
     container.appendChild(fragment);
+
+    // 推荐区渲染完成后居中显示
+    if (typeof centerNetflixRows === 'function') {
+        setTimeout(centerNetflixRows, 0);
+    }
 }
 
 // 重置到首页

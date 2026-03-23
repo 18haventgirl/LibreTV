@@ -548,6 +548,7 @@ function setupEventListeners() {
 
     // 首页推荐横向滚动（滚轮改为左右）
     enableHorizontalWheelScroll();
+    centerNetflixRows();
 }
 
 // 将鼠标滚轮转换为横向滚动，提升推荐区浏览体验
@@ -555,13 +556,47 @@ function enableHorizontalWheelScroll() {
     const rows = document.querySelectorAll('.netflix-row');
     if (!rows || rows.length === 0) return;
 
+    const stateMap = new WeakMap();
+
+    const animateScroll = (row) => {
+        const state = stateMap.get(row);
+        if (!state) return;
+        const maxScroll = row.scrollWidth - row.clientWidth;
+        state.target = Math.max(0, Math.min(state.target, maxScroll));
+        const delta = state.target - row.scrollLeft;
+        if (Math.abs(delta) < 0.5) {
+            row.scrollLeft = state.target;
+            state.raf = null;
+            return;
+        }
+        row.scrollLeft += delta * 0.18;
+        state.raf = requestAnimationFrame(() => animateScroll(row));
+    };
+
     rows.forEach(row => {
+        stateMap.set(row, { target: row.scrollLeft, raf: null });
         row.addEventListener('wheel', (e) => {
             if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-                row.scrollLeft += e.deltaY;
+                const state = stateMap.get(row);
+                state.target += e.deltaY;
+                if (!state.raf) {
+                    state.raf = requestAnimationFrame(() => animateScroll(row));
+                }
                 e.preventDefault();
             }
         }, { passive: false });
+    });
+}
+
+// 让推荐区默认居中，保持左右对称的视觉
+function centerNetflixRows() {
+    const rows = document.querySelectorAll('.netflix-row');
+    if (!rows || rows.length === 0) return;
+    rows.forEach(row => {
+        const maxScroll = row.scrollWidth - row.clientWidth;
+        if (maxScroll > 0) {
+            row.scrollLeft = Math.round(maxScroll / 2);
+        }
     });
 }
 
