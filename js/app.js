@@ -545,6 +545,24 @@ function setupEventListeners() {
             localStorage.setItem(PLAYER_CONFIG.adFilteringStorage, e.target.checked);
         });
     }
+
+    // 首页推荐横向滚动（滚轮改为左右）
+    enableHorizontalWheelScroll();
+}
+
+// 将鼠标滚轮转换为横向滚动，提升推荐区浏览体验
+function enableHorizontalWheelScroll() {
+    const rows = document.querySelectorAll('.netflix-row');
+    if (!rows || rows.length === 0) return;
+
+    rows.forEach(row => {
+        row.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                row.scrollLeft += e.deltaY;
+                e.preventDefault();
+            }
+        }, { passive: false });
+    });
 }
 
 // 重置搜索区域
