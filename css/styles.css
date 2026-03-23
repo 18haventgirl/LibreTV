@@ -1229,3 +1229,8 @@ body {
     color: var(--primary-color) !important;
     -webkit-text-fill-color: var(--primary-color) !important;
 }
+
+/* Hide panel close button (use top-right settings toggle or click-outside) */
+.settings-panel .close-btn {
+    display: none !important;
+}
