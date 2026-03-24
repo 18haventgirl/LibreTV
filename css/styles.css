@@ -1234,3 +1234,39 @@ body {
 .settings-panel .close-btn {
     display: none !important;
 }
+
+/* Theme overrides for fixed utility colors */
+.bg-\[\#111\],
+.bg-\[\#191919\],
+.bg-\[\#1a1a1a\],
+.bg-\[\#222\],
+.bg-\[\#333\],
+.bg-\[\#151515\] {
+    background-color: var(--panel-bg) !important;
+}
+
+.bg-\[\#0b0b0b\],
+.bg-\[\#000\] {
+    background-color: var(--secondary-color) !important;
+}
+
+.border-\[\#333\],
+.border-\[\#444\],
+.border-\[\#222\] {
+    border-color: var(--panel-border) !important;
+}
+
+.text-white {
+    color: var(--text-color) !important;
+}
+
+.text-gray-300,
+.text-gray-400,
+.text-gray-500 {
+    color: var(--text-muted) !important;
+}
+
+.hover\:bg-\[\#333\]:hover,
+.hover\:bg-\[\#222\]:hover {
+    background-color: var(--card-gradient-end) !important;
+}

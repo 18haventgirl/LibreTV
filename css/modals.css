@@ -11,10 +11,10 @@
 }
 
 .modal-content {
-    background-color: #111;
+    background-color: var(--panel-bg);
     padding: 2rem;
     border-radius: 0.5rem;
-    border: 1px solid #333;
+    border: 1px solid var(--panel-border);
     width: 91.666667%;
     max-width: 56rem;
     max-height: 90vh;
@@ -69,8 +69,8 @@
 
 .password-input {
     width: 100%;
-    background-color: #111;
-    border: 1px solid #333;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--panel-border);
     color: white;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -166,10 +166,10 @@
 }
 
 .loading-content {
-    background-color: #111;
+    background-color: var(--panel-bg);
     padding: 2rem;
     border-radius: 0.5rem;
-    border: 1px solid #333;
+    border: 1px solid var(--panel-border);
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -212,5 +212,6 @@
 .modal-overlay.hide {
     animation: fadeOut 0.3s forwards;
 }
+
 
 
