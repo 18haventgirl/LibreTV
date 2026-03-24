@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh" data-theme="forest">
+<html lang="zh" data-theme="cinema">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1258Movie - 北新楼1258寝室出品的在线视频搜索与观看平台</title>
-    <meta name="description" content="1258Movie是一个免费的在线视频搜索平台，无广告、安全，提供来自多个视频源的内容搜索与观看服务，无需注册即可使用。">
-    <meta name="keywords" content="在线视频,免费视频,视频搜索,电影,电视剧,1258Movie">
+    <title>1258Movie - 北新�?258寝室出品的在线视频搜索与观看平台</title>
+    <meta name="description" content="1258Movie是一个免费的在线视频搜索平台，无广告、安全，提供来自多个视频源的内容搜索与观看服务，无需注册即可使用�?>
+    <meta name="keywords" content="在线视频,免费视频,视频搜索,电影,电视�?1258Movie">
     <meta name="author" content="1258Movie Team">
 
     <!-- Favicon -->
@@ -53,7 +53,7 @@
             <div class="w-4"></div> <!-- 添加一个占位元素以确保标题居中 -->
         </div>
         <div id="historyList" class="pb-4">
-            <!-- 历史记录将在这里动态显示 -->
+            <!-- 历史记录将在这里动态显�?-->
             <div class="text-center text-gray-500 py-8">暂无观看记录</div>
         </div>
         <div class="mt-4 text-center sticky bottom-0 pb-2 pt-2 bg-[#111]">
@@ -75,21 +75,23 @@
                 <div class="p-3 bg-[#151515] rounded-lg shadow-inner">
                     <label class="block text-sm font-medium text-gray-400 mb-3 border-b border-[#333] pb-1">主题设置</label>
                     <select id="themeSelect" class="w-full bg-[#222] border border-[#333] text-white px-2 py-2 rounded">
-                        <option value="cinema">Cinema</option>
-                        <option value="ocean">Ocean</option>
-                        <option value="forest">Forest</option>
-                        <option value="sunset">Sunset</option>
-                    </select>
+    <option value="cinema">Ĭ��ӰԺ</option>
+    <option value="ocean">��������</option>
+    <option value="forest">�ɷ�ɭ��</option>
+    <option value="sunset">ĺϼ����</option>
+    <option value="bright">������</option>
+    <option value="glass">���ֲ���</option>
+</select>
                 </div>
-            <!-- 数据源设置区域 -->
+            <!-- 数据源设置区�?-->
             <div class="p-3 bg-[#151515] rounded-lg shadow-inner">
-                <label class="block text-sm font-medium text-gray-400 mb-3 border-b border-[#333] pb-1">数据源设置</label>
+                <label class="block text-sm font-medium text-gray-400 mb-3 border-b border-[#333] pb-1">数据源设�?/label>
                 
                 <!-- 批量操作按钮 -->
                 <div class="flex space-x-2 mb-3">
-                    <button onclick="selectAllAPIs(true)" class="px-2 py-1 bg-[#333] hover:bg-[#222] text-white text-xs rounded">全选</button>
-                    <button onclick="selectAllAPIs(false)" class="px-2 py-1 bg-[#333] hover:bg-[#222] text-white text-xs rounded">全不选</button>
-                    <button onclick="selectAllAPIs(true, true)" class="px-2 py-1 bg-[#333] hover:bg-[#222] text-white text-xs rounded">全选普通资源</button>
+                    <button onclick="selectAllAPIs(true)" class="px-2 py-1 bg-[#333] hover:bg-[#222] text-white text-xs rounded">全�?/button>
+                    <button onclick="selectAllAPIs(false)" class="px-2 py-1 bg-[#333] hover:bg-[#222] text-white text-xs rounded">全不�?/button>
+                    <button onclick="selectAllAPIs(true, true)" class="px-2 py-1 bg-[#333] hover:bg-[#222] text-white text-xs rounded">全选普通资�?/button>
                 </div>
                 
                 <!-- API选择区域 - 使用滚动区域 -->
@@ -101,7 +103,7 @@
                 
                 <!-- API信息显示 -->
                 <div class="text-xs text-gray-500 flex justify-between items-center">
-                    <span>已选API数量：<span id="selectedApiCount" class="text-white">0</span></span>
+                    <span>已选API数量�?span id="selectedApiCount" class="text-white">0</span></span>
                     <span id="siteStatus" class="ml-2"></span>
                 </div>
             </div>
@@ -120,12 +122,12 @@
                 <div id="addCustomApiForm" class="hidden mt-2 p-2 bg-[#191919] rounded-lg">
                     <input type="text" id="customApiName" placeholder="API名称" class="w-full bg-[#222] border border-[#333] text-white px-2 py-1 rounded mb-2" autocomplete="off">
                     <input type="text" id="customApiUrl" placeholder="https://abc.com" class="w-full bg-[#222] border border-[#333] text-white px-2 py-1 rounded mb-2" autocomplete="off">
-                    <!-- 新增 detail 地址输入框 -->
+                    <!-- 新增 detail 地址输入�?-->
                     <input type="text" id="customApiDetail" placeholder="detail地址（可选）" class="w-full bg-[#222] border border-[#333] text-white px-2 py-1 rounded mb-2" autocomplete="off">
                     <!-- 添加成人内容切换 -->
                     <div class="flex items-center mb-2">
                         <input type="checkbox" id="customApiIsAdult" class="form-checkbox h-4 w-4 text-red-500 bg-[#222] border border-[#333]">
-                        <label for="customApiIsAdult" class="ml-2 text-xs text-red-400">黄色资源站</label>
+                        <label for="customApiIsAdult" class="ml-2 text-xs text-red-400">黄色资源�?/label>
                     </div>
                     <div class="flex space-x-2">
                         <button onclick="addCustomApi()" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-xs">添加</button>
@@ -136,14 +138,14 @@
             
             <!-- 内容过滤设置区域 -->
             <div class="p-3 bg-[#151515] rounded-lg shadow-inner">
-                <label class="block text-sm font-medium text-gray-400 mb-3 border-b border-[#333] pb-1">功能开关</label>
+                <label class="block text-sm font-medium text-gray-400 mb-3 border-b border-[#333] pb-1">功能开�?/label>
                 
-                <!-- 黄色内容过滤开关 -->
+                <!-- 黄色内容过滤开�?-->
                 <div class="flex flex-col mb-3 pb-3 border-b border-[#222] relative">
                     <div class="flex items-center justify-between">
                         <div>
                             <label class="text-sm font-medium text-gray-400">黄色内容过滤</label>
-                            <p class="text-xs text-gray-500 mt-1 filter-description">过滤"伦理片"等黄色内容</p>
+                            <p class="text-xs text-gray-500 mt-1 filter-description">过滤"伦理�?等黄色内�?/p>
                         </div>
                         <div class="relative inline-block w-12 align-middle select-none">
                             <input type="checkbox" id="yellowFilterToggle" class="opacity-0 absolute w-full h-full cursor-pointer z-10">
@@ -151,10 +153,10 @@
                             <div class="toggle-dot absolute w-5 h-5 bg-white rounded-full top-0.5 left-0.5 transition-transform duration-300 ease-in-out"></div>
                         </div>
                     </div>
-                    <!-- 警告提示将在这里动态插入 -->
+                    <!-- 警告提示将在这里动态插�?-->
                 </div>
                 
-                <!-- 广告过滤开关 -->
+                <!-- 广告过滤开�?-->
                 <div class="flex items-center justify-between mb-3 pb-3 border-b border-[#222]">
                     <div>
                         <label class="text-sm font-medium text-gray-400">分片广告过滤</label>
@@ -167,7 +169,7 @@
                     </div>
                 </div>
                 
-                <!-- 豆瓣热门开关 -->
+                <!-- 豆瓣热门开�?-->
                 <div class="flex items-center justify-between">
                     <div>
                         <label class="text-sm font-medium text-gray-400">豆瓣热门推荐</label>
@@ -181,9 +183,9 @@
                 </div>
             </div>
 
-            <!-- 一般功能区域 -->
+            <!-- 一般功能区�?-->
             <div class="p-3 bg-[#151515] rounded-lg shadow-inner">
-                <label class="block text-sm font-medium text-gray-400 mb-3 border-b border-[#333] pb-1">一般功能</label>
+                <label class="block text-sm font-medium text-gray-400 mb-3 border-b border-[#333] pb-1">一般功�?/label>
                 <button onclick="importConfig()" class="px-4 py-2 w-full bg-gradient-to-r from-red-600 via-red-700 to-red-800 hover:from-red-700 hover:via-red-800 hover:to-red-900 text-white rounded-lg text-sm transition-all duration-300 shadow-md hover:shadow-lg mb-2">导入配置</button>
                 <button onclick="exportConfig()" class="px-4 py-2 mb-2 w-full bg-gradient-to-r from-red-600 via-red-700 to-red-800 hover:from-red-700 hover:via-red-800 hover:to-red-900 text-white rounded-lg text-sm transition-all duration-300 shadow-md hover:shadow-lg">导出配置</button>
                 <button onclick="clearLocalStorage()" class="px-4 py-2 w-full bg-gradient-to-r from-red-600 via-red-700 to-red-800 hover:from-red-700 hover:via-red-800 hover:to-red-900 text-white rounded-lg text-sm transition-all duration-300 shadow-md hover:shadow-lg">清除Cookie</button>
@@ -193,7 +195,7 @@
 
     <div class="container mx-auto px-4 py-8 flex flex-col h-screen">
         <div class="flex-1 flex flex-col">
-            <!-- 网站标志和口号 -->
+            <!-- 网站标志和口�?-->
             <header class="text-center mb-2">
                 <div class="flex justify-center items-center mb-4">
                     <a href="#" onclick="resetToHome(); return false;" class="flex items-center">
@@ -203,7 +205,7 @@
                         <h1 class="text-5xl font-bold gradient-text">北新1258寝室专用TV</h1>
                     </a>
                 </div>
-                <p class="text-gray-400 mb-8">自由观影，畅享精彩</p>
+                <p class="text-gray-400 mb-8">自由观影，畅享精�?/p>
             </header>
             
 
@@ -222,14 +224,14 @@
                                class="search-input"
                                placeholder="搜索你喜欢的视频..." 
                                autocomplete="off"
-                               aria-label="视频搜索框"
+                               aria-label="视频搜索�?
                                oninput="toggleClearButton()">
                         <!-- 清空按钮 -->
                         <button id="clearSearchInput" 
                                 class="search-clear hidden"
                                 onclick="clearSearchInput()"
-                                aria-label="清空搜索框"
-                                title="清空搜索框">
+                                aria-label="清空搜索�?
+                                title="清空搜索�?>
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
@@ -242,8 +244,8 @@
                         </button>
                     </div>
                     
-                    <!-- 添加最近搜索记录部分 -->
-                    <div id="recentSearches" class="mt-4 flex flex-wrap gap-2" aria-label="最近搜索记录">
+                    <!-- 添加最近搜索记录部�?-->
+                    <div id="recentSearches" class="mt-4 flex flex-wrap gap-2" aria-label="最近搜索记�?>
                         <!-- 这里会动态插入最近的搜索记录 -->
                     </div>
                 </div>
@@ -254,24 +256,24 @@
                 <div class="mx-auto max-w-screen-xl px-2">
                     <!-- 改进标题和标签区域布局 -->
                     <div class="mb-4">
-                        <!-- 标题和刷新按钮一行 -->
+                        <!-- 标题和刷新按钮一�?-->
                         <div class="flex items-center justify-between mb-4">
                             <div class="flex items-center">
                                 <h2 class="text-xl font-bold text-white mr-4">豆瓣热门</h2>
 
 
 
-                                <!-- 添加电影/电视剧切换开关 -->
+                                <!-- 添加电影/电视剧切换开�?-->
                                 <div class="douban-toggle">
                                     <button id="douban-movie-toggle" class="douban-toggle-button active">电影</button>
-                                    <button id="douban-tv-toggle" class="douban-toggle-button">电视剧</button>
+                                    <button id="douban-tv-toggle" class="douban-toggle-button">电视�?/button>
                                 </div>
 
 
 
                             </div>
                             <button id="douban-refresh" class="douban-refresh-button">
-                                <span>换一批</span>
+                                <span>换一�?/span>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                                 </svg>
@@ -290,18 +292,18 @@
                 </div>
             </div>
             
-            <!-- 搜索结果：初始隐藏 -->
+            <!-- 搜索结果：初始隐�?-->
             <div id="resultsArea" class="w-full hidden">
                 <div class="mx-auto max-w-7xl px-2"> <!-- 添加最大宽度限制并居中 -->
                     <div class="flex justify-end items-center mb-4">
                         <div class="text-sm text-gray-400">
-                            <span id="searchResultsCount">0</span> 个结果
+                            <span id="searchResultsCount">0</span> 个结�?
                         </div>
                     </div>
                     <!-- 修改网格布局以适应大一些的横向卡片 -->
                     <div class="netflix-row-wrap">
                         <div id="results" class="results-grid">
-                        <!-- 结果将在这里动态生成 -->
+                        <!-- 结果将在这里动态生�?-->
                         </div>
                     </div>
                     <div id="resultsPagination" class="mt-4 flex flex-wrap justify-center gap-2"></div>
@@ -320,13 +322,13 @@
                         </svg>
                         <span class="gradient-text font-bold">1258Movie</span>
                     </div>
-                    <p class="text-gray-500 text-sm mt-2 text-center md:text-left">© 2025 1258Movie - 自由观影，畅享精彩</p>
+                    <p class="text-gray-500 text-sm mt-2 text-center md:text-left">© 2025 1258Movie - 自由观影，畅享精�?/p>
                 </div>
 
                 <div class="text-center md:text-right">
                     <p class="text-gray-500 text-sm max-w-md">
-                        免责声明：本站仅为视频搜索工具，不存储、上传或分发任何视频内容。
-                        所有视频均来自第三方API接口。如有侵权，请联系相关内容提供方。
+                        免责声明：本站仅为视频搜索工具，不存储、上传或分发任何视频内容�?
+                        所有视频均来自第三方API接口。如有侵权，请联系相关内容提供方�?
                     </p>
                     <div class="mt-2 flex justify-center md:justify-end space-x-4">
                         <a href="about.html" class="text-gray-400 hover:text-white text-sm transition-colors">关于我们</a>
@@ -359,7 +361,7 @@
                 <h2 class="text-2xl font-bold gradient-text">访问验证</h2>
             </div>
             <div class="mb-6">
-                <p class="text-gray-300 mb-4">请输入密码继续访问</p>
+                <p class="text-gray-300 mb-4">请输入密码继续访�?/p>
                 <form id="passwordForm" onsubmit="handlePasswordSubmit(); return false;">
                     <input type="text" name="username" id="username" autocomplete="username" style="display:none" tabindex="-1" aria-hidden="true">
                     <input type="password" id="passwordInput" class="w-full bg-[#111] border border-[#333] text-white px-4 py-3 rounded-lg focus:outline-none focus:border-red-500 transition-colors" placeholder="密码..." autocomplete="new-password">
@@ -376,40 +378,40 @@
             <h2 class="text-2xl font-bold gradient-text mb-6 text-center">使用声明</h2>
             <div class="text-gray-300 space-y-4">
                 <p>
-                    欢迎使用 1258Movie。在开始使用前，请您了解并同意以下条款：
+                    欢迎使用 1258Movie。在开始使用前，请您了解并同意以下条款�?
                 </p>
                 <p>
-                    <strong class="text-red-400">服务性质：</strong> 1258Movie 仅提供视频搜索服务，不直接提供、存储或上传任何视频内容。所有搜索结果均来自第三方公开接口。
+                    <strong class="text-red-400">服务性质�?/strong> 1258Movie 仅提供视频搜索服务，不直接提供、存储或上传任何视频内容。所有搜索结果均来自第三方公开接口�?
                 </p>
                 <p>
-                    <strong class="text-red-400">用户责任：</strong> 用户在使用本站服务时，须遵守相关法律法规，不得利用搜索结果从事侵权行为，如下载、传播未经授权的作品等。
+                    <strong class="text-red-400">用户责任�?/strong> 用户在使用本站服务时，须遵守相关法律法规，不得利用搜索结果从事侵权行为，如下载、传播未经授权的作品等�?
                 </p>
                 <p>
-                    <strong class="text-red-400">广告风险提示：</strong> 本站所有视频均来自第三方采集站，视频中出现的广告与本站无关，请勿相信或点击视频中的任何广告内容，谨防上当受骗。
+                    <strong class="text-red-400">广告风险提示�?/strong> 本站所有视频均来自第三方采集站，视频中出现的广告与本站无关，请勿相信或点击视频中的任何广告内容，谨防上当受骗�?
                 </p>
             </div>
             <div class="mt-6 flex justify-center">
                 <button id="acceptDisclaimerBtn" class="px-6 py-3 bg-gradient-to-r from-red-600 via-red-700 to-red-800 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                    我已了解并接受
+                    我已了解并接�?
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- 错误提示框 -->
+    <!-- 错误提示�?-->
     <div id="toast" class="fixed top-4 left-1/2 -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 opacity-0 -translate-y-full z-50">
         <p id="toastMessage"></p>
     </div>
 
-    <!-- 添加 loading 提示框 -->
+    <!-- 添加 loading 提示�?-->
     <div id="loading" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
         <div class="bg-[#111] p-8 rounded-lg border border-[#333] flex items-center space-x-4">
             <div class="w-8 h-8 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-            <p class="text-white text-lg">加载中...</p>
+            <p class="text-white text-lg">加载�?..</p>
         </div>
     </div>
 
-    <!-- JSON-LD 结构化数据 -->
+    <!-- JSON-LD 结构化数�?-->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -425,7 +427,7 @@
     }
     </script>
 
-    <!-- 引入纯 JS sha256（HTTP 下依然可用） -->
+    <!-- 引入�?JS sha256（HTTP 下依然可用） -->
     <script src="libs/sha256.min.js"></script>
     <script>
         // 保存原始 js‑sha256 实现，避免被 password.js 覆盖
@@ -447,14 +449,17 @@
         window.__ENV__ = window.__ENV__ || {};
         
         // 注入服务器端环境变量 (将由服务器端替换)
-        // PASSWORD 变量将在这里被服务器端注入
+        // PASSWORD 变量将在这里被服务器端注�?
         window.__ENV__.PASSWORD = "{{PASSWORD}}";
     </script>
 
-    <!-- 版本检测脚本 -->
+    <!-- 版本检测脚�?-->
 <!--    <script src="js/version-check.js"></script>-->
 
     <!-- 添加弹窗和URL搜索参数处理脚本 -->
     <script src="js/index-page.js"></script>
 </body>
 </html>
+
+
+

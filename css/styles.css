@@ -74,7 +74,7 @@ LibreTV 全局样式
     --panel-border: rgba(255, 255, 255, 0.08);
     --glow-1: rgba(var(--accent-rgb), 0.12);
     --glow-2: rgba(var(--accent-rgb), 0.08);
-    --accent-rgb: 229, 9, 20;
+    --accent-rgb: 229, 9, 20;\r\n    --page-bg-image: none;
 }
 
 :root[data-theme="ocean"] {
@@ -96,7 +96,7 @@ LibreTV 全局样式
     --panel-border: rgba(255, 255, 255, 0.08);
     --glow-1: rgba(47, 183, 255, 0.16);
     --glow-2: rgba(47, 183, 255, 0.1);
-    --accent-rgb: 47, 183, 255;
+    --accent-rgb: 47, 183, 255;\r\n    --page-bg-image: none;
 }
 
 :root[data-theme="forest"] {
@@ -118,7 +118,7 @@ LibreTV 全局样式
     --panel-border: rgba(255, 255, 255, 0.08);
     --glow-1: rgba(59, 178, 115, 0.16);
     --glow-2: rgba(59, 178, 115, 0.1);
-    --accent-rgb: 59, 178, 115;
+    --accent-rgb: 59, 178, 115;\r\n    --page-bg-image: none;
 }
 
 :root[data-theme="sunset"] {
@@ -140,7 +140,52 @@ LibreTV 全局样式
     --panel-border: rgba(255, 255, 255, 0.08);
     --glow-1: rgba(255, 107, 26, 0.16);
     --glow-2: rgba(255, 107, 26, 0.1);
-    --accent-rgb: 255, 107, 26;
+    --accent-rgb: 255, 107, 26;\r\n    --page-bg-image: none;
+}
+:root[data-theme="bright"] {
+    --primary-color: #2d77ff;
+    --primary-light: #6fa7ff;
+    --primary-dark: #1a4db8;
+    --accent-color: #2d77ff;
+    --text-color: #0f141c;
+    --text-muted: #5a6777;
+    --secondary-color: #f4f7fb;
+    --border-color: rgba(15, 20, 28, 0.12);
+    --page-gradient-start: #f4f7fb;
+    --page-gradient-end: #e8eef6;
+    --card-gradient-start: #ffffff;
+    --card-gradient-end: #f2f5f9;
+    --card-accent: rgba(45, 119, 255, 0.12);
+    --card-hover-border: rgba(45, 119, 255, 0.4);
+    --panel-bg: rgba(255, 255, 255, 0.9);
+    --panel-border: rgba(15, 20, 28, 0.12);
+    --glow-1: rgba(45, 119, 255, 0.08);
+    --glow-2: rgba(45, 119, 255, 0.06);
+    --accent-rgb: 45, 119, 255;
+    --page-bg-image: none;
+}
+
+:root[data-theme="glass"] {
+    --primary-color: #4fd37a;
+    --primary-light: #7fe29d;
+    --primary-dark: #2a9a52;
+    --accent-color: #4fd37a;
+    --text-color: #e9f7ef;
+    --text-muted: #b5cdbf;
+    --secondary-color: #0b1511;
+    --border-color: rgba(255, 255, 255, 0.18);
+    --page-gradient-start: rgba(10, 16, 12, 0.55);
+    --page-gradient-end: rgba(7, 12, 9, 0.75);
+    --card-gradient-start: rgba(18, 28, 22, 0.5);
+    --card-gradient-end: rgba(10, 18, 13, 0.65);
+    --card-accent: rgba(79, 211, 122, 0.16);
+    --card-hover-border: rgba(79, 211, 122, 0.55);
+    --panel-bg: rgba(12, 20, 14, 0.55);
+    --panel-border: rgba(255, 255, 255, 0.22);
+    --glow-1: rgba(79, 211, 122, 0.16);
+    --glow-2: rgba(79, 211, 122, 0.1);
+    --accent-rgb: 79, 211, 122;
+    --page-bg-image: url("image/theme/green.jpg");
 }
 
 
@@ -166,14 +211,13 @@ LibreTV 全局样式
     background: linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end));
     min-height: 100vh;
     /* Dark ambience + subtle grain */
-    background-image:
-        linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end)),
+    background-image:\r\n        var(--page-bg-image),\r\n        linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end)),
         radial-gradient(circle at 18% 12%, var(--glow-1), transparent 48%),
         radial-gradient(circle at 85% 0%, var(--glow-2), transparent 55%),
         radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.035) 1px, transparent 2px),
         radial-gradient(circle at 70px 70px, rgba(255, 255, 255, 0.02) 1px, transparent 2px);
     background-blend-mode: normal;
-    background-size: cover, 100% 100%, 120px 120px, 60px 60px;
+    background-size: cover, 100% 100%, 100% 100%, 120px 120px, 60px 60px;
 }
 
 button, .card-hover {
@@ -1233,4 +1277,59 @@ body {
 /* Hide panel close button (use top-right settings toggle or click-outside) */
 .settings-panel .close-btn {
     display: none !important;
+}
+
+
+
+
+/* Glass theme frosted surfaces */
+:root[data-theme="glass"] .card-hover,
+:root[data-theme="glass"] .settings-panel,
+:root[data-theme="glass"] .history-panel,
+:root[data-theme="glass"] .search-box,
+:root[data-theme="glass"] #modal > div,
+:root[data-theme="glass"] .footer {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Theme overrides for fixed utility colors */
+.bg-\[\#111\],
+.bg-\[\#191919\],
+.bg-\[\#1a1a1a\],
+.bg-\[\#222\],
+.bg-\[\#333\],
+.bg-\[\#151515\] {
+    background-color: var(--panel-bg) !important;
+}
+
+.bg-\[\#0b0b0b\],
+.bg-\[\#000\] {
+    background-color: var(--secondary-color) !important;
+}
+
+.border-\[\#333\],
+.border-\[\#444\],
+.border-\[\#222\] {
+    border-color: var(--panel-border) !important;
+}
+
+.text-white {
+    color: var(--text-color) !important;
+}
+
+.text-gray-300,
+.text-gray-400,
+.text-gray-500 {
+    color: var(--text-muted) !important;
+}
+
+.hover\:bg-\[\#333\]:hover,
+.hover\:bg-\[\#222\]:hover {
+    background-color: var(--card-gradient-end) !important;
+}
+
+.hover\:text-red-300:hover,
+.hover\:text-red-400:hover {
+    color: var(--primary-light) !important;
 }
