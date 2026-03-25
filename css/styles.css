@@ -1,10 +1,10 @@
-/*
+﻿/*
 LibreTV 全局样式
 包含多个页面共享的基础样式
-对于特定页面的样式，请参�?
+对于特定页面的样式，请参�?
 - index.css: 首页特定样式
-- player.css: 播放器页面特定样�?
-- watch.css: 重定向页面特定样�?
+- player.css: 播放器页面特定样�?
+- watch.css: 重定向页面特定样�?
 - modals.css: 模态框和提示框样式
 */
 
@@ -37,7 +37,7 @@ LibreTV 全局样式
 }
 
 
-/*    !* 赛博影视主题配色方案 - 柔和�?*!*/
+/*    !* 赛博影视主题配色方案 - 柔和�?*!*/
 /*    --primary-color: var(--primary-color);       !* 霓虹蓝主色调 *!*/
 /*    --primary-light: #e50914;       !* 浅霓虹蓝变体 *!*/
 /*    --secondary-color: #0b0b0b;     !* 深蓝黑背景色 *!*/
@@ -47,8 +47,8 @@ LibreTV 全局样式
 /*    --border-color: rgba(0, 204, 255, 0.15);*/
 /*    --page-gradient-start: #0b0b0b; !* 深蓝黑起始色 *!*/
 /*    --page-gradient-end: #151515;   !* 深靛蓝结束色 *!*/
-/*    --card-gradient-start: #141414; !* 卡片起始�?*!*/
-/*    --card-gradient-end: #1f1f1f;   !* 卡片结束�?*!*/
+/*    --card-gradient-start: #141414; !* 卡片起始�?*!*/
+/*    --card-gradient-end: #1f1f1f;   !* 卡片结束�?*!*/
 /*    --card-accent: rgba(0, 204, 255, 0.12); !* 霓虹蓝卡片强调色 *!*/
 /*    --card-hover-border: rgba(0, 204, 255, 0.5); !* 悬停边框颜色 *!*/
 /*}*/
@@ -74,7 +74,7 @@ LibreTV 全局样式
     --panel-border: rgba(255, 255, 255, 0.08);
     --glow-1: rgba(var(--accent-rgb), 0.12);
     --glow-2: rgba(var(--accent-rgb), 0.08);
-    --accent-rgb: 229, 9, 20;
+    --accent-rgb: 229, 9, 20;\r\n    --page-bg-image: none;
 }
 
 :root[data-theme="ocean"] {
@@ -96,7 +96,7 @@ LibreTV 全局样式
     --panel-border: rgba(255, 255, 255, 0.08);
     --glow-1: rgba(47, 183, 255, 0.16);
     --glow-2: rgba(47, 183, 255, 0.1);
-    --accent-rgb: 47, 183, 255;
+    --accent-rgb: 47, 183, 255;\r\n    --page-bg-image: none;
 }
 
 :root[data-theme="forest"] {
@@ -118,7 +118,7 @@ LibreTV 全局样式
     --panel-border: rgba(255, 255, 255, 0.08);
     --glow-1: rgba(59, 178, 115, 0.16);
     --glow-2: rgba(59, 178, 115, 0.1);
-    --accent-rgb: 59, 178, 115;
+    --accent-rgb: 59, 178, 115;\r\n    --page-bg-image: none;
 }
 
 :root[data-theme="sunset"] {
@@ -140,7 +140,52 @@ LibreTV 全局样式
     --panel-border: rgba(255, 255, 255, 0.08);
     --glow-1: rgba(255, 107, 26, 0.16);
     --glow-2: rgba(255, 107, 26, 0.1);
-    --accent-rgb: 255, 107, 26;
+    --accent-rgb: 255, 107, 26;\r\n    --page-bg-image: none;
+}
+:root[data-theme="bright"] {
+    --primary-color: #2d77ff;
+    --primary-light: #6fa7ff;
+    --primary-dark: #1a4db8;
+    --accent-color: #2d77ff;
+    --text-color: #0f141c;
+    --text-muted: #5a6777;
+    --secondary-color: #f4f7fb;
+    --border-color: rgba(15, 20, 28, 0.12);
+    --page-gradient-start: #f4f7fb;
+    --page-gradient-end: #e8eef6;
+    --card-gradient-start: #ffffff;
+    --card-gradient-end: #f2f5f9;
+    --card-accent: rgba(45, 119, 255, 0.12);
+    --card-hover-border: rgba(45, 119, 255, 0.4);
+    --panel-bg: rgba(255, 255, 255, 0.9);
+    --panel-border: rgba(15, 20, 28, 0.12);
+    --glow-1: rgba(45, 119, 255, 0.08);
+    --glow-2: rgba(45, 119, 255, 0.06);
+    --accent-rgb: 45, 119, 255;
+    --page-bg-image: none;
+}
+
+:root[data-theme="glass"] {
+    --primary-color: #4fd37a;
+    --primary-light: #7fe29d;
+    --primary-dark: #2a9a52;
+    --accent-color: #4fd37a;
+    --text-color: #e9f7ef;
+    --text-muted: #b5cdbf;
+    --secondary-color: #0b1511;
+    --border-color: rgba(255, 255, 255, 0.18);
+    --page-gradient-start: rgba(10, 16, 12, 0.55);
+    --page-gradient-end: rgba(7, 12, 9, 0.75);
+    --card-gradient-start: rgba(18, 28, 22, 0.5);
+    --card-gradient-end: rgba(10, 18, 13, 0.65);
+    --card-accent: rgba(79, 211, 122, 0.16);
+    --card-hover-border: rgba(79, 211, 122, 0.55);
+    --panel-bg: rgba(12, 20, 14, 0.55);
+    --panel-border: rgba(255, 255, 255, 0.22);
+    --glow-1: rgba(79, 211, 122, 0.16);
+    --glow-2: rgba(79, 211, 122, 0.1);
+    --accent-rgb: 79, 211, 122;
+    --page-bg-image: url("image/theme/green.jpg");
 }
 
 
@@ -149,14 +194,14 @@ LibreTV 全局样式
 /*    --primary-color: var(--text-muted);       !* 湖水绿主色调 *!*/
 /*    --primary-light: #b3b3b3;       !* 浅湖水绿变体 *!*/
 /*    --secondary-color: #151515;     !* 浅灰白背景色 *!*/
-/*    --accent-color: var(--primary-color);        !* 蓝色强调�?*!*/
-/*    --text-color: #141414;          !* 深灰蓝文�?*!*/
-/*    --text-muted: #b3b3b3;          !* 暗青灰次级文�?*!*/
+/*    --accent-color: var(--primary-color);        !* 蓝色强调�?*!*/
+/*    --text-color: #141414;          !* 深灰蓝文�?*!*/
+/*    --text-muted: #b3b3b3;          !* 暗青灰次级文�?*!*/
 /*    --border-color: rgba(59, 185, 168, 0.2);*/
 /*    --page-gradient-start: #151515; !* 淡青绿色渐变起点 *!*/
 /*    --page-gradient-end: #151515;   !* 极浅白绿渐变终点 *!*/
-/*    --card-gradient-start: #ffffff; !* 卡片起始�?*!*/
-/*    --card-gradient-end: #1f1f1f;   !* 卡片结束�?*!*/
+/*    --card-gradient-start: #ffffff; !* 卡片起始�?*!*/
+/*    --card-gradient-end: #1f1f1f;   !* 卡片结束�?*!*/
 /*    --card-accent: rgba(59, 185, 168, 0.12); !* 湖水绿卡片强调色 *!*/
 /*    --card-hover-border: rgba(59, 185, 168, 0.4); !* 悬停边框 *!*/
 /*}*/
@@ -166,14 +211,13 @@ LibreTV 全局样式
     background: linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end));
     min-height: 100vh;
     /* Dark ambience + subtle grain */
-    background-image:
-        linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end)),
+    background-image:\r\n        var(--page-bg-image),\r\n        linear-gradient(180deg, var(--page-gradient-start), var(--page-gradient-end)),
         radial-gradient(circle at 18% 12%, var(--glow-1), transparent 48%),
         radial-gradient(circle at 85% 0%, var(--glow-2), transparent 55%),
         radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.035) 1px, transparent 2px),
         radial-gradient(circle at 70px 70px, rgba(255, 255, 255, 0.02) 1px, transparent 2px);
     background-blend-mode: normal;
-    background-size: cover, 100% 100%, 120px 120px, 60px 60px;
+    background-size: cover, 100% 100%, 100% 100%, 120px 120px, 60px 60px;
 }
 
 button, .card-hover {
@@ -194,14 +238,14 @@ button, .card-hover {
     color: var(--text-color);
 }
 
-/* 确保卡片内容区域高度一致�?*/
+/* 确保卡片内容区域高度一致�?*/
 .card-hover .flex-grow {
-    min-height: unset; /* 移除最小高度限制，让内容自然流�?*/
+    min-height: unset; /* 移除最小高度限制，让内容自然流�?*/
     display: flex;
     flex-direction: column;
 }
 
-/* 针对不同长度的标题优化显�?*/
+/* 针对不同长度的标题优化显�?*/
 .card-hover h3 {
     min-height: unset;
     max-height: unset;
@@ -215,7 +259,7 @@ button, .card-hover {
     hyphens: auto; /* 允许断词 */
 }
 
-/* 强制卡片文字高对比，避免被其它类覆盖成黑�?*/
+/* 强制卡片文字高对比，避免被其它类覆盖成黑�?*/
 .card-hover h3,
 .card-hover .text-black,
 .card-hover .text-gray-900,
@@ -597,7 +641,7 @@ body {
     color: var(--primary-light) !important;
 }
 
-/* 添加警告图标和标签样�?*/
+/* 添加警告图标和标签样�?*/
 .adult-warning {
     display: inline-flex;
     align-items: center;
@@ -611,14 +655,14 @@ body {
     margin-right: 4px;
 }
 
-/* 过滤器禁用样�?*/
+/* 过滤器禁用样�?*/
 .filter-disabled {
     opacity: 0.5;
     pointer-events: none;
     cursor: not-allowed;
 }
 
-/* API组标题样�?*/
+/* API组标题样�?*/
 .api-group-title {
     grid-column: span 2;
     padding: 0.25rem 0;
@@ -634,7 +678,7 @@ body {
     color: var(--primary-light);
 }
 
-/* 过滤器禁用样�?- 改进版本 */
+/* 过滤器禁用样�?- 改进版本 */
 .filter-disabled {
     position: relative;
 }
@@ -664,7 +708,7 @@ body {
     background-color: var(--text-muted) !important;
 }
 
-/* 改进过滤器禁用样�?*/
+/* 改进过滤器禁用样�?*/
 .filter-disabled .filter-description {
     color: var(--primary-light) !important;
     font-style: italic;
@@ -689,16 +733,16 @@ body {
 }
 
 .filter-disabled > * {
-    opacity: 1; /* 提高子元素不透明度，保证可见�?*/
-    z-index: 6; /* 确保内容在遮罩上�?*/
+    opacity: 1; /* 提高子元素不透明度，保证可见�?*/
+    z-index: 6; /* 确保内容在遮罩上�?*/
 }
 
-/* 改进过滤器禁用状态下的描述样�?*/
+/* 改进过滤器禁用状态下的描述样�?*/
 .filter-disabled .filter-description {
-    color: var(--primary-light) !important; /* 更亮的粉�?*/
+    color: var(--primary-light) !important; /* 更亮的粉�?*/
     font-style: italic;
     font-weight: 500;
-    text-shadow: 0 0 2px rgba(0,0,0,0.8); /* 添加文字阴影提高对比�?*/
+    text-shadow: 0 0 2px rgba(0,0,0,0.8); /* 添加文字阴影提高对比�?*/
 }
 
 /* 开关的禁用样式 */
@@ -778,7 +822,7 @@ body {
     overflow-y: scroll; /* 始终显示滚动条，防止宽度变化 */
     overflow-x: hidden; /* 防止水平滚动 */
     width: 320px; /* 固定宽度 */
-    box-sizing: border-box; /* 确保padding不影响总宽�?*/
+    box-sizing: border-box; /* 确保padding不影响总宽�?*/
     scrollbar-gutter: stable; /* 现代浏览器：为滚动条预留空间 */
 }
 
@@ -787,10 +831,10 @@ body {
 }
 
 #historyList {
-    padding-right: 6px; /* 为滚动条预留空间，确保内容不被挤�?*/
+    padding-right: 6px; /* 为滚动条预留空间，确保内容不被挤�?*/
 }
 
-/* 历史记录项样式优�?*/
+/* 历史记录项样式优�?*/
 .history-item {
     background: #1a1a1a;
     border-radius: 10px; /* 减小圆角 */
@@ -800,7 +844,7 @@ body {
     padding: 10px 14px;
     position: relative;
     margin-bottom: 8px; /* 减小底部间距 */
-    width: 100%; /* 确保宽度一�?*/
+    width: 100%; /* 确保宽度一�?*/
 }
 
 .history-item:hover {
@@ -809,7 +853,7 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* 添加组悬停效果，使删除按钮在悬停时显�?*/
+/* 添加组悬停效果，使删除按钮在悬停时显�?*/
 .history-item .delete-btn {
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -889,7 +933,7 @@ body {
     text-overflow: ellipsis;
 }
 
-/* 添加播放进度条样�?*/
+/* 添加播放进度条样�?*/
 .history-progress {
     margin: 5px 0;
 }
@@ -935,7 +979,7 @@ body {
     transform: translateX(-50%) translateY(0);
 }
 
-/* 锁定控制时屏蔽交�?*/
+/* 锁定控制时屏蔽交�?*/
 .player-container.controls-locked .dplayer-controller,
 .player-container.controls-locked .dplayer-mask,
 .player-container.controls-locked .dplayer-bar-wrap,
@@ -944,13 +988,13 @@ body {
     opacity: 0 !important;
     pointer-events: none !important;
 }
-/* 保留锁按钮可见可�?*/
+/* 保留锁按钮可见可�?*/
 .player-container.controls-locked #lockToggle {
     opacity: 1 !important;
     pointer-events: auto !important;
 }
 
-/* 播放器顶部header移动端优�?*/
+/* 播放器顶部header移动端优�?*/
 .player-header {
     gap: 0.5rem;
 }
@@ -994,8 +1038,8 @@ body {
 
 /* 搜索结果卡片优化：横向布局 */
 .search-card-img-container {
-    width: 100px;  /* 增加宽度，从80px�?00px */
-    height: 150px; /* 增加高度，从120px�?50px */
+    width: 100px;  /* 增加宽度，从80px�?00px */
+    height: 150px; /* 增加高度，从120px�?50px */
     overflow: hidden;
     background-color: #191919;
 }
@@ -1021,7 +1065,7 @@ body {
     }
 }
 
-/* 调整网格布局，减少每行卡片数量以适应更大尺寸的卡�?*/
+/* 调整网格布局，减少每行卡片数量以适应更大尺寸的卡�?*/
 @media (min-width: 769px) and (max-width: 1024px) {
     #results {
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -1034,12 +1078,12 @@ body {
     }
 }
 
-/* 优化卡片内元素间�?*/
+/* 优化卡片内元素间�?*/
 .card-hover .p-2 {
-    padding: 0.75rem; /* 增加内边�?*/
+    padding: 0.75rem; /* 增加内边�?*/
 }
 
-/* 增加卡片内字体大�?*/
+/* 增加卡片内字体大�?*/
 .card-hover h3 {
     font-size: 0.95rem; /* 增加标题字体大小 */
     color:black;
@@ -1051,12 +1095,12 @@ body {
     font-size: 0.8rem; /* 增加描述字体大小 */
 }
 
-/* 优化卡片内元素间�?*/
+/* 优化卡片内元素间�?*/
 .card-hover .p-2 {
     padding: 0.5rem;
 }
 
-/* 确保Toast显示在顶层并有适当的转换效�?*/
+/* 确保Toast显示在顶层并有适当的转换效�?*/
 #toast {
     z-index: 9999; /* 确保显示在最上层 */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -1152,7 +1196,7 @@ body {
     gap: 0.5rem;
 }
 
-/* 移动端优�?*/
+/* 移动端优�?*/
 @media (max-width: 640px) {
     #modal .detail-grid {
         gap: 0.5rem;
@@ -1218,6 +1262,11 @@ body {
 :root:not([data-page="player"]) .focus\:ring-red-500:focus {
     box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.3) !important;
 }
+
+
+
+
+
 /* Cinema theme fallback for title visibility */
 :root[data-theme="cinema"] .gradient-text {
     background: none !important;
@@ -1228,6 +1277,20 @@ body {
 /* Hide panel close button (use top-right settings toggle or click-outside) */
 .settings-panel .close-btn {
     display: none !important;
+}
+
+
+
+
+/* Glass theme frosted surfaces */
+:root[data-theme="glass"] .card-hover,
+:root[data-theme="glass"] .settings-panel,
+:root[data-theme="glass"] .history-panel,
+:root[data-theme="glass"] .search-box,
+:root[data-theme="glass"] #modal > div,
+:root[data-theme="glass"] .footer {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 /* Theme overrides for fixed utility colors (exclude player page) */
@@ -1260,7 +1323,13 @@ body {
 :root:not([data-page="player"]) .text-gray-500 {
     color: var(--text-muted) !important;
 }
+
 :root:not([data-page="player"]) .hover\:bg-\[\#333\]:hover,
 :root:not([data-page="player"]) .hover\:bg-\[\#222\]:hover {
     background-color: var(--card-gradient-end) !important;
+}
+
+.hover\:text-red-300:hover,
+.hover\:text-red-400:hover {
+    color: var(--primary-light) !important;
 }
