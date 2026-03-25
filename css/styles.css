@@ -188,6 +188,19 @@ LibreTV 全局样式
     --page-bg-image: url("image/theme/green.jpg");
 }
 
+/* Player page gets a dedicated accent palette to avoid cross-page uniformity */
+:root[data-page="player"] {
+    --primary-color: #e50914;
+    --primary-light: #ff3b45;
+    --primary-dark: #b20710;
+    --accent-color: #e50914;
+    --accent-rgb: 229, 9, 20;
+    --card-accent: rgba(var(--accent-rgb), 0.16);
+    --card-hover-border: rgba(var(--accent-rgb), 0.55);
+    --glow-1: rgba(var(--accent-rgb), 0.12);
+    --glow-2: rgba(var(--accent-rgb), 0.08);
+}
+
 
 
 /*    !* 蓝绿清新配色方案 *!*/
@@ -1216,50 +1229,50 @@ body {
 
 
 
-/* Theme color overrides for utility classes (exclude player page) */
-:root:not([data-page="player"]) .text-red-300,
-:root:not([data-page="player"]) .text-red-400,
-:root:not([data-page="player"]) .text-red-500,
-:root:not([data-page="player"]) .text-red-600 {
+/* Theme color overrides for utility classes */
+.text-red-300,
+.text-red-400,
+.text-red-500,
+.text-red-600 {
     color: var(--primary-color) !important;
 }
 
-:root:not([data-page="player"]) .text-red-400,
-:root:not([data-page="player"]) .text-red-300 {
+.text-red-400,
+.text-red-300 {
     color: var(--primary-light) !important;
 }
 
-:root:not([data-page="player"]) .bg-red-500,
-:root:not([data-page="player"]) .bg-red-600 {
+.bg-red-500,
+.bg-red-600 {
     background-color: var(--primary-color) !important;
 }
 
-:root:not([data-page="player"]) .bg-red-700,
-:root:not([data-page="player"]) .bg-red-800 {
+.bg-red-700,
+.bg-red-800 {
     background-color: var(--primary-dark) !important;
 }
 
-:root:not([data-page="player"]) .border-red-500,
-:root:not([data-page="player"]) .border-red-600 {
+.border-red-500,
+.border-red-600 {
     border-color: var(--primary-color) !important;
 }
 
-:root:not([data-page="player"]) .hover\:bg-red-700:hover,
-:root:not([data-page="player"]) .hover\:bg-red-800:hover {
+.hover\:bg-red-700:hover,
+.hover\:bg-red-800:hover {
     background-color: var(--primary-dark) !important;
 }
 
-:root:not([data-page="player"]) .hover\:bg-red-600:hover {
+.hover\:bg-red-600:hover {
     background-color: var(--primary-color) !important;
 }
 
-:root:not([data-page="player"]) .hover\:text-red-400:hover,
-:root:not([data-page="player"]) .hover\:text-red-500:hover,
-:root:not([data-page="player"]) .hover\:text-red-700:hover {
+.hover\:text-red-400:hover,
+.hover\:text-red-500:hover,
+.hover\:text-red-700:hover {
     color: var(--primary-light) !important;
 }
 
-:root:not([data-page="player"]) .focus\:ring-red-500:focus {
+.focus\:ring-red-500:focus {
     box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.3) !important;
 }
 
@@ -1293,39 +1306,39 @@ body {
     -webkit-backdrop-filter: blur(12px);
 }
 
-/* Theme overrides for fixed utility colors (exclude player page) */
-:root:not([data-page="player"]) .bg-\[\#111\],
-:root:not([data-page="player"]) .bg-\[\#191919\],
-:root:not([data-page="player"]) .bg-\[\#1a1a1a\],
-:root:not([data-page="player"]) .bg-\[\#222\],
-:root:not([data-page="player"]) .bg-\[\#333\],
-:root:not([data-page="player"]) .bg-\[\#151515\] {
+/* Theme overrides for fixed utility colors */
+.bg-\[\#111\],
+.bg-\[\#191919\],
+.bg-\[\#1a1a1a\],
+.bg-\[\#222\],
+.bg-\[\#333\],
+.bg-\[\#151515\] {
     background-color: var(--panel-bg) !important;
 }
 
-:root:not([data-page="player"]) .bg-\[\#0b0b0b\],
-:root:not([data-page="player"]) .bg-\[\#000\] {
+.bg-\[\#0b0b0b\],
+.bg-\[\#000\] {
     background-color: var(--secondary-color) !important;
 }
 
-:root:not([data-page="player"]) .border-\[\#333\],
-:root:not([data-page="player"]) .border-\[\#444\],
-:root:not([data-page="player"]) .border-\[\#222\] {
+.border-\[\#333\],
+.border-\[\#444\],
+.border-\[\#222\] {
     border-color: var(--panel-border) !important;
 }
 
-:root:not([data-page="player"]) .text-white {
+.text-white {
     color: var(--text-color) !important;
 }
 
-:root:not([data-page="player"]) .text-gray-300,
-:root:not([data-page="player"]) .text-gray-400,
-:root:not([data-page="player"]) .text-gray-500 {
+.text-gray-300,
+.text-gray-400,
+.text-gray-500 {
     color: var(--text-muted) !important;
 }
 
-:root:not([data-page="player"]) .hover\:bg-\[\#333\]:hover,
-:root:not([data-page="player"]) .hover\:bg-\[\#222\]:hover {
+.hover\:bg-\[\#333\]:hover,
+.hover\:bg-\[\#222\]:hover {
     background-color: var(--card-gradient-end) !important;
 }
 
