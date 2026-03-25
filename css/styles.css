@@ -1172,57 +1172,52 @@ body {
 
 
 
-/* Theme color overrides for utility classes */
-.text-red-300,
-.text-red-400,
-.text-red-500,
-.text-red-600 {
+/* Theme color overrides for utility classes (exclude player page) */
+:root:not([data-page="player"]) .text-red-300,
+:root:not([data-page="player"]) .text-red-400,
+:root:not([data-page="player"]) .text-red-500,
+:root:not([data-page="player"]) .text-red-600 {
     color: var(--primary-color) !important;
 }
 
-.text-red-400,
-.text-red-300 {
+:root:not([data-page="player"]) .text-red-400,
+:root:not([data-page="player"]) .text-red-300 {
     color: var(--primary-light) !important;
 }
 
-.bg-red-500,
-.bg-red-600 {
+:root:not([data-page="player"]) .bg-red-500,
+:root:not([data-page="player"]) .bg-red-600 {
     background-color: var(--primary-color) !important;
 }
 
-.bg-red-700,
-.bg-red-800 {
+:root:not([data-page="player"]) .bg-red-700,
+:root:not([data-page="player"]) .bg-red-800 {
     background-color: var(--primary-dark) !important;
 }
 
-.border-red-500,
-.border-red-600 {
+:root:not([data-page="player"]) .border-red-500,
+:root:not([data-page="player"]) .border-red-600 {
     border-color: var(--primary-color) !important;
 }
 
-.hover\:bg-red-700:hover,
-.hover\:bg-red-800:hover {
+:root:not([data-page="player"]) .hover\:bg-red-700:hover,
+:root:not([data-page="player"]) .hover\:bg-red-800:hover {
     background-color: var(--primary-dark) !important;
 }
 
-.hover\:bg-red-600:hover {
+:root:not([data-page="player"]) .hover\:bg-red-600:hover {
     background-color: var(--primary-color) !important;
 }
 
-.hover\:text-red-400:hover,
-.hover\:text-red-500:hover,
-.hover\:text-red-700:hover {
+:root:not([data-page="player"]) .hover\:text-red-400:hover,
+:root:not([data-page="player"]) .hover\:text-red-500:hover,
+:root:not([data-page="player"]) .hover\:text-red-700:hover {
     color: var(--primary-light) !important;
 }
 
-.focus\:ring-red-500:focus {
+:root:not([data-page="player"]) .focus\:ring-red-500:focus {
     box-shadow: 0 0 0 2px rgba(var(--accent-rgb), 0.3) !important;
 }
-
-
-
-
-
 /* Cinema theme fallback for title visibility */
 :root[data-theme="cinema"] .gradient-text {
     background: none !important;
@@ -1235,38 +1230,37 @@ body {
     display: none !important;
 }
 
-/* Theme overrides for fixed utility colors */
-.bg-\[\#111\],
-.bg-\[\#191919\],
-.bg-\[\#1a1a1a\],
-.bg-\[\#222\],
-.bg-\[\#333\],
-.bg-\[\#151515\] {
+/* Theme overrides for fixed utility colors (exclude player page) */
+:root:not([data-page="player"]) .bg-\[\#111\],
+:root:not([data-page="player"]) .bg-\[\#191919\],
+:root:not([data-page="player"]) .bg-\[\#1a1a1a\],
+:root:not([data-page="player"]) .bg-\[\#222\],
+:root:not([data-page="player"]) .bg-\[\#333\],
+:root:not([data-page="player"]) .bg-\[\#151515\] {
     background-color: var(--panel-bg) !important;
 }
 
-.bg-\[\#0b0b0b\],
-.bg-\[\#000\] {
+:root:not([data-page="player"]) .bg-\[\#0b0b0b\],
+:root:not([data-page="player"]) .bg-\[\#000\] {
     background-color: var(--secondary-color) !important;
 }
 
-.border-\[\#333\],
-.border-\[\#444\],
-.border-\[\#222\] {
+:root:not([data-page="player"]) .border-\[\#333\],
+:root:not([data-page="player"]) .border-\[\#444\],
+:root:not([data-page="player"]) .border-\[\#222\] {
     border-color: var(--panel-border) !important;
 }
 
-.text-white {
+:root:not([data-page="player"]) .text-white {
     color: var(--text-color) !important;
 }
 
-.text-gray-300,
-.text-gray-400,
-.text-gray-500 {
+:root:not([data-page="player"]) .text-gray-300,
+:root:not([data-page="player"]) .text-gray-400,
+:root:not([data-page="player"]) .text-gray-500 {
     color: var(--text-muted) !important;
 }
-
-.hover\:bg-\[\#333\]:hover,
-.hover\:bg-\[\#222\]:hover {
+:root:not([data-page="player"]) .hover\:bg-\[\#333\]:hover,
+:root:not([data-page="player"]) .hover\:bg-\[\#222\]:hover {
     background-color: var(--card-gradient-end) !important;
 }
